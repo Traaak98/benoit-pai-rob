@@ -1,5 +1,5 @@
 # Tennis Ball Collector
-
+![Benoit Paire](../../images/paire.gif)
 Ceci est un template de dépôt Git pour le cours d'ingénierie système et modélisation robotique à l'ENSTA Bretagne en 2023.
 
 
