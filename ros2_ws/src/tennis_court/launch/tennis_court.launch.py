@@ -60,7 +60,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(name="gui", default_value="true"),
         DeclareLaunchArgument(name="paused", default_value="false"),
-        DeclareLaunchArgument(name="rviz", default_value="false"),
+        DeclareLaunchArgument(name="rviz", default_value="true"),
         DeclareLaunchArgument(name="manager", default_value="true"),
         gzserver_launch,
         gzclient_launch,
