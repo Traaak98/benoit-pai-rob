@@ -38,6 +38,16 @@ def generate_launch_description():
         arguments=['-entity', 'benoit_pairob', '-topic', 'robot_description', '-x', '3', '-y', '-3', '-z', '1'],
         output='screen'
     )
+    joycon_node = launch_ros.actions.Node(
+        package='joy',
+        executable='joy_node',
+        name='joy_node'
+    )
+    teleop_control_node = launch_ros.actions.Node(
+        package='my_robot_control',
+        executable='my_robot_control_node',
+        name='my_robot_control'
+    )
 
     return launch.LaunchDescription([
         launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
@@ -48,5 +58,7 @@ def generate_launch_description():
         robot_state_publisher_node,
         tennis_court_launch,
         spawn_entity,
-        rviz_node
+        rviz_node,
+        joycon_node,
+        teleop_control_node
     ])
