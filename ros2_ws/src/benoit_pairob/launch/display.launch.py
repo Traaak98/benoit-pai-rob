@@ -1,12 +1,19 @@
 import launch
+from launch.actions import IncludeLaunchDescription
 from launch.substitutions import Command, LaunchConfiguration
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 import launch_ros
 import os
 
 def generate_launch_description():
     pkg_share = launch_ros.substitutions.FindPackageShare(package='benoit_pairob').find('benoit_pairob')
+    tennis_court_share = launch_ros.substitutions.FindPackageShare(package='tennis_court').find('tennis_court')
     default_model_path = os.path.join(pkg_share, 'src/description/benoit_pairob_description.urdf')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
+    tennis_court_launch_file = os.path.join(tennis_court_share, "launch", "tennis_court.launch.py")
+    tennis_court_launch = IncludeLaunchDescription(
+      PythonLaunchDescriptionSource(tennis_court_launch_file)
+    )
 
     robot_state_publisher_node = launch_ros.actions.Node(
         package='robot_state_publisher',
@@ -28,28 +35,18 @@ def generate_launch_description():
     spawn_entity = launch_ros.actions.Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-entity', 'sam_bot', '-topic', 'robot_description'],
+        arguments=['-entity', 'benoit_pairob', '-topic', 'robot_description', '-x', '3', '-y', '-3', '-z', '1'],
         output='screen'
     )
-    robot_localization_node = launch_ros.actions.Node(
-       package='robot_localization',
-       executable='ekf_node',
-       name='ekf_filter_node',
-       output='screen',
-       parameters=[os.path.join(pkg_share, 'config/ekf.yaml'), {'use_sim_time': LaunchConfiguration('use_sim_time')}]
-)
 
     return launch.LaunchDescription([
         launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
                                             description='Absolute path to robot urdf file'),
         launch.actions.DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
                                             description='Absolute path to rviz config file'),
-        launch.actions.ExecuteProcess(cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_init.so', '-s', 'libgazebo_ros_factory.so'], output='screen'),
-        launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='True',
-                                            description='Flag to enable use_sim_time'),
         joint_state_publisher_node,
         robot_state_publisher_node,
+        tennis_court_launch,
         spawn_entity,
-        robot_localization_node,
         rviz_node
     ])
