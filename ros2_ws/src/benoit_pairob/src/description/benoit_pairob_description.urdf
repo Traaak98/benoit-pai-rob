@@ -208,6 +208,12 @@
     <origin xyz="${caster_xoff} 0.0 ${-(base_height/2)}" rpy="0 0 0"/>
   </joint>
 
+  <gazebo reference="front_caster">
+    <material>Gazebo/Black</material>
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+  </gazebo>
+
   <!-- IMU -->
   <link name="imu_link">
     <visual>
@@ -386,7 +392,7 @@
       <right_joint>drivewhl_r_joint</right_joint>
   
       <!-- kinematics -->
-      <wheel_separation>0.4</wheel_separation>
+      <wheel_separation>0.5</wheel_separation>
       <wheel_diameter>0.2</wheel_diameter>
   
       <!-- limits -->
