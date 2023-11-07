@@ -20,10 +20,38 @@ Ceci est un template de dépôt Git pour le cours d'ingénierie système et mod�
 
 ### Démarrer la simulation
 
-###### A compléter avec la/les commande(s) à lancer.
-```bash
-# TODO
-```
+#### Lancer la simulation avec ros2
+Commencez par build les packages :
+source /opt/ros/humble/setup.bash
+cd ~/benoit-pai-rob/ros2_ws
+colcon build
+source install/setup.bash
+
+Ouvrez 3 terminaux :
+Sur vos 3 terminaux sourcez ros2 humble et votre workspace
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+
+Terminal 1 :
+Lancez la simulation 
+ros2 launch benoit_pairob display.launch.py
+
+Pour récupérer les informations de la télécommande et déplacer votre robot suivez les instructions suivantes :
+
+Terminal 2 :
+Lancez le noeud joy_node
+ros2 run joy joy_node
+
+Terminal 3 :
+Lancez le noeud my_robot_control_node
+ros2 run my_robot_control my_robot_control_node
+
+
+Le robot se déplace grâce au joystick de droite de la télécommande :
+
+* Le robot avance/recule si l'utilisateur avance/recule le joystick
+* Le robot tourne à gauche/droite si le joystick va vers la gauche/droite
+
 
 
 ## Groupe
