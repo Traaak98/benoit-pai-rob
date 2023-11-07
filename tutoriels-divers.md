@@ -236,3 +236,18 @@ Etapes à suivre :
   sudo apt update
   sudo apt install ros-humble-benoit-pairob
   ```
+
+## Créer un repository sur le serveur Nexus
+
+Il y a une partie d'utilisation de l'interface de Nexus et une autre de génération de clés de sécurité.
+
+### Création du repository
+* Sur le site...
+
+### Génération des clés de sécurité
+
+
+
+### Ajout des clés de sécurité au repository
+
+###
