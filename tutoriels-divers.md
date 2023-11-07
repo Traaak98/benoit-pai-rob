@@ -70,6 +70,8 @@ Mais que fais ce fichier Clara ?
 
 C'est très simple, à chaque événement dans le git, sauf si précisions sur le lancement des jobs (ce que je fais par la suite)
 la pipeline se lance sur un ordinateur externe grâce à un [**runner**](https://docs.gitlab.com/runner/).  
+Thomas Le Mézo et Marguerite l'ont configuré sur un ordinateur de l'ENSTA au début de projet.
+Sur ce runner on a choisi une image docker (ros:humble chez nous) dans laquelle vont s'exécuter les commandes listées dans le fichier yaml.
 
 ## Compiler notre projet dans la pipeline
 ```yaml
