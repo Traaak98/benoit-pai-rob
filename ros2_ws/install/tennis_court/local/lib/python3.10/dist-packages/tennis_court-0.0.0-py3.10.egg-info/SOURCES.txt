@@ -4,5 +4,3 @@ tennis_court.egg-info/PKG-INFO
 tennis_court.egg-info/SOURCES.txt
 tennis_court.egg-info/dependency_links.txt
 tennis_court.egg-info/top_level.txt
-tennis_court/msg/__init__.py
-tennis_court/msg/_ball_manager_stats.py
