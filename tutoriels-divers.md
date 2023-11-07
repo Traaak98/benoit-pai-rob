@@ -1,7 +1,10 @@
 # Tutoriels divers
 ## Sommaire 
-1. [Créer un package debian à partir d'un package ROS2 et l'installer sur son ordinateur](#créer-un-package-debian-à-partir-dun-package-ros2-et-linstaller-sur-son-ordinateur)
-2. [La même chose dans le pipeline](#la-m%C3%AAme-chose-dans-le-pipeline)
+1. [Créer une intégration continue sur Gitlab](#créer-une-intégration-continue-sur-gitlab) 
+2. [Compiler notre projet dans la pipeline](#compiler-notre-projet-dans-la-pipeline)
+3. [Créer un package debian à partir d'un package ROS2 et l'installer sur son ordinateur](#créer-un-package-debian-à-partir-dun-package-ros2-et-linstaller-sur-son-ordinateur)
+4. [La même chose dans le pipeline](#la-m%C3%AAme-chose-dans-le-pipeline)
+5. [Pouvoir installer des packages depuis le serveur Nexus](#pouvoir-installer-des-packages-depuis-le-serveur-nexus)
 
 
 ## Créer une intégration continue sur Gitlab
@@ -92,6 +95,9 @@ build-job:       # This job runs in the build stage, which runs first.
   rules:
     - if: $CI_COMMIT_BRANCH == "develop"
 ```
+
+Utilisation de la catégorie ```rules``` : permet de spécifier quel type d'événement déclenche le job.
+On peut en mettre plusieur. Ici c'est assez explicite.
 
 ## Créer un package debian à partir d'un package ROS2 et l'installer sur son ordinateur
 
@@ -206,3 +212,7 @@ deploy-job:      # This job runs in the deploy stage.
   rules:
     - if: $CI_COMMIT_BRANCH == "develop"
 ```
+
+## Pouvoir installer des packages depuis le serveur Nexus
+
+hahahahahhahahahah
