@@ -21,6 +21,10 @@ build-job:       # This job runs in the build stage, which runs first.
     - colcon build --packages-select vision_pkg
     - colcon build --packages-select benoit-pairob
     - echo "Compile complete."
+    - git add build/ install/ log/  # sorcellerie pour avoir le build dans le repo quand on veut deploy
+    - git commit -m "build"
+    - git push
+    - echo "Push complete."
   rules:
     - if: $CI_COMMIT_BRANCH =~ /^feature/ # pour tester
     - if: $CI_COMMIT_BRANCH == "develop"
