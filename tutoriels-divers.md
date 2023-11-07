@@ -61,6 +61,16 @@ deploy-job:      # This job runs in the deploy stage.
     - echo "Application successfully deployed."
 ```
 
+Les ```stages``` ce sont les grandes étapes de la pipeline. 
+On définit ensuite un nombre de ```jobs``` auxquels on associe une étape pour définir quand il se lance.
+Cela permet de lancer plusieur choses en parallèles, comme pour les tests par exemple.
+Dans notre cas, les parties ```build``` et ```deploy``` sont les plus importantes.
+
+Mais que fais ce fichier Clara ?
+
+C'est très simple, à chaque événement dans le git, sauf si précisions sur le lancement des jobs (ce que je fais par la suite)
+la pipeline se lance sur un ordinateur externe grâce à un [**runner**](https://docs.gitlab.com/runner/).  
+
 ## Compiler notre projet dans la pipeline
 ```yaml
 build-job:       # This job runs in the build stage, which runs first.
