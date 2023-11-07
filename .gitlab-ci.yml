@@ -51,6 +51,9 @@ deploy-job:      # This job runs in the deploy stage.
   dependencies:
     - build-job
   script:
+    - echo "Installing applications..."
+    - apt update
+    - apt install python3-bloom fakeroot dpkg-dev debhelper -y
     - echo "Deploying application..."
     # pour le changement automatique de version
     # catkin_generate_changelog
