@@ -3,6 +3,84 @@
 1. [Créer un package debian à partir d'un package ROS2 et l'installer sur son ordinateur](#créer-un-package-debian-à-partir-dun-package-ros2-et-linstaller-sur-son-ordinateur)
 2. [La même chose dans le pipeline](#la-m%C3%AAme-chose-dans-le-pipeline)
 
+
+## Créer une intégration continue sur Gitlab
+
+### Créer un fichier .gitlab-ci.yml à la racine du projet
+Le mieux c'est d'utiliser l'interface de Gitlab : aller dans Build > Pipeline Editor > Configure pipeline.
+Il crée un fichier prérempli qui se présente ainsi : 
+```yaml
+# This file is a template, and might need editing before it works on your project.
+# This is a sample GitLab CI/CD configuration file that should run without any modifications.
+# It demonstrates a basic 3 stage CI/CD pipeline. Instead of real tests or scripts,
+# it uses echo commands to simulate the pipeline execution.
+#
+# A pipeline is composed of independent jobs that run scripts, grouped into stages.
+# Stages run in sequential order, but jobs within stages run in parallel.
+#
+# For more information, see: https://docs.gitlab.com/ee/ci/yaml/index.html#stages
+#
+# You can copy and paste this template into a new `.gitlab-ci.yml` file.
+# You should not add this template to an existing `.gitlab-ci.yml` file by using the `include:` keyword.
+#
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/ee/development/cicd/templates.html
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
+
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - test
+  - deploy
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - echo "Compile complete."
+
+unit-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Running unit tests... This will take about 60 seconds."
+    - sleep 60
+    - echo "Code coverage is 90%"
+
+lint-test-job:   # This job also runs in the test stage.
+  stage: test    # It can run at the same time as unit-test-job (in parallel).
+  script:
+    - echo "Linting code... This will take about 10 seconds."
+    - sleep 10
+    - echo "No lint issues found."
+
+deploy-job:      # This job runs in the deploy stage.
+  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+  environment: production
+  script:
+    - echo "Deploying application..."
+    - echo "Application successfully deployed."
+```
+
+## Compiler notre projet dans la pipeline
+```yaml
+build-job:       # This job runs in the build stage, which runs first.
+  - echo "Compiling the code..."
+  # add other necessary commands for the docker
+  - apt update
+  - rosdep update --rosdistro humble
+  # apt install python3-catkin-pkg
+  # build the packages
+  - cd ros2_ws/
+  - rm -rf build/ install/ log/
+  - source /opt/ros/humble/setup.bash
+  - colcon build --packages-select robot_pkg
+  - colcon build --packages-select vision_pkg
+  - colcon build --packages-select benoit-pairob
+  - echo "Compile complete."
+  rules:
+    - if: $CI_COMMIT_BRANCH == "develop"
+```
+
 ## Créer un package debian à partir d'un package ROS2 et l'installer sur son ordinateur
 
 Voir le tutoriel dont sont tirées la plupart des commandes [ici](https://github.com/carlosmccosta/ros_development_tools/blob/master/catkin/create_deb_files_for_ros_packages.md).
@@ -114,7 +192,5 @@ deploy-job:      # This job runs in the deploy stage.
     - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb)" "http://172.19.48.50:8081/repository/supernana_dev/"'
     - echo "Application successfully deployed."
   rules:
-    - if: $CI_COMMIT_BRANCH =~ /^feature/ # pour tester
     - if: $CI_COMMIT_BRANCH == "develop"
-
 ```
