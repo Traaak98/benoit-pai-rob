@@ -194,7 +194,7 @@ deploy-job:      # This job runs in the deploy stage.
     # catkin_prepare_release
     # git add src/*/CHANGELOG.rst
     # git commit -m "CHANGELOG.rst"
-    - echo "yaml file:/home/user/benoit-pai-rob/bloom_config.yml" >> /etc/ros/rosdep/sources.list.d/10-local.list # vérfier le path 
+    - echo "yaml file:/builds/user/benoit-pai-rob/bloom_config.yml" >> /etc/ros/rosdep/sources.list.d/10-local.list # vérfier le path 
     - rosdep update
     - source /opt/ros/humble/setup.bash
     - cd ros2_ws/
@@ -215,4 +215,24 @@ deploy-job:      # This job runs in the deploy stage.
 
 ## Pouvoir installer des packages depuis le serveur Nexus
 
-hahahahahhahahahah
+Ce qu'il faut c'est indiquer à notre ```apt``` l'adresse des sources et les clés de sécurité pour y accéder. Simple non ? Non.
+De base, les instructions c'était d'utiliser une commande ```apt-key add ...``` dont le nom est assez explicite mais qui ne fonctionne plus (deprecated).
+On utilise donc ```gpg``` de la même manière que pour l'installation de ROS2.
+
+> Note : pour la première méthode, il fallait aussi modifier le fichier /etc/apt/sources.list avec l'URL du serveur.
+> 
+> Mais maintenant on rajoute un fichier dans le dossier /etc/apt/sources.list.d avec ces informations, cf ci-dessous.
+
+Etapes à suivre :
+
+* Vérifier que l'on a bien le fichier ```dev-public.gpg.key```, sinon me le demander !
+* Exécuter la commande suivante :
+  ```bash
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/path-to-key/dev-public.gpg.key] http://172.19.48.50:8081/ jammy main" | sudo tee /etc/apt/sources.list.d/benoit.list > /dev/null
+  ```
+  > Note : le nom benoit.list est arbitraire !
+* Vérifier si ça marche ! Il faut être connecté à eduroam
+  ```bash
+  sudo apt update
+  sudo apt install ros-humble-benoit-pairob
+  ```
