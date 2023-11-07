@@ -22,13 +22,17 @@ Ceci est un template de dépôt Git pour le cours d'ingénierie système et mod�
 
 ### Membres
 
-###### A compléter avec les membres du groupe.
+* [Clara GONDOT](mailto:clara.gondot@ensta-bretagne.org)
+* [Rania ZIANE](mailto:rania.ziane@ensta-bretagne.org)
+* [Marguerite MIALLIER](mailto:marguerite.miallier@ensta-bretagne.org)
+* [Apolline DEVAULCHIER](mailto:apolline.de_vaulchier@ensta-bretagne.org)
+* [Emilie LEDOUSSAL](mailto:emilie.ledoussal@ensta-bretagne.org)
+* [Ludovic MUSTIERE](mailto:ludovic.mustiere@ensta-bretagne.org)
+* [Titouan BELIER](mailto:titouan.belier@ensta-bretagne.org)
 
 
 ### Gestion de projet
-
-###### A compléter avec le lien vers votre [Taiga](https://taiga.io).
-
+Lien vers notre gestionnaire de projet Agile : [Taïga](https://tree.taiga.io/project/zianerania-benoit_pairob/timeline).
 
 
 ## Structure du dépôt
