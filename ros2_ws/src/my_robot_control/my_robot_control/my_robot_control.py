@@ -16,7 +16,10 @@ class RobotControlNode(Node):
 
         cmd_vel_msg = Twist()
         cmd_vel_msg.linear.x = linear_speed
-        cmd_vel_msg.angular.z = angular_speed
+        if linear_speed < 0:
+            cmd_vel_msg.angular.z = -angular_speed
+        else:
+            cmd_vel_msg.angular.z = angular_speed
 
         self.cmd_vel_publisher.publish(cmd_vel_msg)
 
