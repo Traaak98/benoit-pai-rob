@@ -1,0 +1,6 @@
+{
+  "package_name": "custom_msg",
+  "non_idl_tuples": [
+    "/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/custom_msg:msg/ImgDetection.msg"
+  ]
+}

@@ -1,0 +1,291 @@
+[0.000000] (-) TimerEvent: {}
+[0.000158] (robot_pkg) JobQueued: {'identifier': 'robot_pkg', 'dependencies': OrderedDict()}
+[0.000227] (tennis_court) JobQueued: {'identifier': 'tennis_court', 'dependencies': OrderedDict()}
+[0.000276] (vision_pkg) JobQueued: {'identifier': 'vision_pkg', 'dependencies': OrderedDict()}
+[0.000319] (robot_pkg) JobStarted: {'identifier': 'robot_pkg'}
+[0.031567] (tennis_court) JobStarted: {'identifier': 'tennis_court'}
+[0.062216] (vision_pkg) JobStarted: {'identifier': 'vision_pkg'}
+[0.099495] (-) TimerEvent: {}
+[0.105865] (robot_pkg) JobProgress: {'identifier': 'robot_pkg', 'progress': 'cmake'}
+[0.107132] (robot_pkg) JobProgress: {'identifier': 'robot_pkg', 'progress': 'build'}
+[0.107861] (robot_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg', '--', '-j16', '-l16'], 'cwd': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'apolline'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/apolline'), ('OLDPWD', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PS1', '(humble) \\[\\033[01;36m\\]$(parse_git_name)\\[\\033[00m\\]\\[\\033[01;36m\\]$(parse_git_branch)\\[\\033[00m\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\] \\n   \\[\\033[01;33m\\]$ \\[\\033[00m\\]'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '2709'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=fb40ad21f5462924e07c6fbc653e31cc'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'apolline'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'apolline'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/home/apolline/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/mooncake:@/tmp/.ICE-unix/2709,unix/mooncake:/tmp/.ICE-unix/2709'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6eb02291_d1e6_40e8_b025_d56dbede658d'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.A3QID2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.420'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '50'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=fb40ad21f5462924e07c6fbc653e31cc'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.110866] (tennis_court) JobProgress: {'identifier': 'tennis_court', 'progress': 'cmake'}
+[0.112745] (tennis_court) JobProgress: {'identifier': 'tennis_court', 'progress': 'build'}
+[0.113331] (tennis_court) Command: {'cmd': ['/usr/bin/cmake', '--build', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court', '--', '-j16', '-l16'], 'cwd': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'apolline'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/apolline'), ('OLDPWD', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PS1', '(humble) \\[\\033[01;36m\\]$(parse_git_name)\\[\\033[00m\\]\\[\\033[01;36m\\]$(parse_git_branch)\\[\\033[00m\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\] \\n   \\[\\033[01;33m\\]$ \\[\\033[00m\\]'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '2709'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=fb40ad21f5462924e07c6fbc653e31cc'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'apolline'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'apolline'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/home/apolline/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/mooncake:@/tmp/.ICE-unix/2709,unix/mooncake:/tmp/.ICE-unix/2709'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6eb02291_d1e6_40e8_b025_d56dbede658d'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.A3QID2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.420'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '50'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=fb40ad21f5462924e07c6fbc653e31cc'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.151885] (tennis_court) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[0.162499] (tennis_court) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[0.169438] (tennis_court) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_copy_tennis_court\n'}
+[0.176818] (tennis_court) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_copy_scripts\n'}
+[0.199645] (-) TimerEvent: {}
+[0.300106] (-) TimerEvent: {}
+[0.321901] (robot_pkg) CommandEnded: {'returncode': 0}
+[0.338067] (tennis_court) StdoutLine: {'line': b'running egg_info\n'}
+[0.339247] (tennis_court) StdoutLine: {'line': b'creating tennis_court.egg-info\n'}
+[0.340094] (robot_pkg) JobProgress: {'identifier': 'robot_pkg', 'progress': 'install'}
+[0.342972] (tennis_court) StdoutLine: {'line': b'[  5%] Built target tennis_court__cpp\n'}
+[0.347243] (robot_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg'], 'cwd': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'apolline'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/apolline'), ('OLDPWD', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PS1', '(humble) \\[\\033[01;36m\\]$(parse_git_name)\\[\\033[00m\\]\\[\\033[01;36m\\]$(parse_git_branch)\\[\\033[00m\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\] \\n   \\[\\033[01;33m\\]$ \\[\\033[00m\\]'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '2709'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=fb40ad21f5462924e07c6fbc653e31cc'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'apolline'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'apolline'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/home/apolline/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/mooncake:@/tmp/.ICE-unix/2709,unix/mooncake:/tmp/.ICE-unix/2709'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6eb02291_d1e6_40e8_b025_d56dbede658d'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.A3QID2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.420'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '50'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=fb40ad21f5462924e07c6fbc653e31cc'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.351368] (tennis_court) StdoutLine: {'line': b'writing tennis_court.egg-info/PKG-INFO\n'}
+[0.353076] (tennis_court) StdoutLine: {'line': b'writing dependency_links to tennis_court.egg-info/dependency_links.txt\n'}
+[0.353433] (tennis_court) StdoutLine: {'line': b'[ 11%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[0.353612] (tennis_court) StdoutLine: {'line': b'[ 11%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[0.354156] (tennis_court) StdoutLine: {'line': b'writing top-level names to tennis_court.egg-info/top_level.txt\n'}
+[0.355864] (tennis_court) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[0.356752] (robot_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.357963] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/ament_index/resource_index/package_run_dependencies/robot_pkg\n'}
+[0.359309] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/ament_index/resource_index/parent_prefix_path/robot_pkg\n'}
+[0.360141] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/environment/ament_prefix_path.sh\n'}
+[0.361366] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/environment/ament_prefix_path.dsv\n'}
+[0.361990] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/environment/path.sh\n'}
+[0.363348] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/environment/path.dsv\n'}
+[0.364496] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/local_setup.bash\n'}
+[0.366019] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/local_setup.sh\n'}
+[0.367641] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/local_setup.zsh\n'}
+[0.368808] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/local_setup.dsv\n'}
+[0.369797] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.dsv\n'}
+[0.371161] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/ament_index/resource_index/packages/robot_pkg\n'}
+[0.372482] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/cmake/robot_pkgConfig.cmake\n'}
+[0.373738] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/cmake/robot_pkgConfig-version.cmake\n'}
+[0.374972] (robot_pkg) StdoutLine: {'line': b'-- Up-to-date: /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.xml\n'}
+[0.377264] (tennis_court) StdoutLine: {'line': b'running egg_info\n'}
+[0.377967] (robot_pkg) CommandEnded: {'returncode': 0}
+[0.378862] (tennis_court) StdoutLine: {'line': b'creating scripts.egg-info\n'}
+[0.400253] (-) TimerEvent: {}
+[0.402015] (tennis_court) StdoutLine: {'line': b'writing scripts.egg-info/PKG-INFO\n'}
+[0.403176] (tennis_court) StdoutLine: {'line': b'writing dependency_links to scripts.egg-info/dependency_links.txt\n'}
+[0.403907] (tennis_court) StdoutLine: {'line': b'writing top-level names to scripts.egg-info/top_level.txt\n'}
+[0.412311] (tennis_court) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/tennis_court__rosidl_generator_c.dir/rosidl_generator_c/tennis_court/msg/detail/ball_manager_stats__functions.c.o\x1b[0m\n'}
+[0.494582] (tennis_court) StdoutLine: {'line': b"writing manifest file 'tennis_court.egg-info/SOURCES.txt'\n"}
+[0.500333] (-) TimerEvent: {}
+[0.503492] (tennis_court) StdoutLine: {'line': b'[ 20%] \x1b[32m\x1b[1mLinking C shared library libtennis_court__rosidl_generator_c.so\x1b[0m\n'}
+[0.539002] (tennis_court) StdoutLine: {'line': b"reading manifest file 'tennis_court.egg-info/SOURCES.txt'\n"}
+[0.539353] (tennis_court) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/tennis_court__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tennis_court/msg/ball_manager_stats__type_support.cpp.o\x1b[0m\n'}
+[0.540783] (tennis_court) StdoutLine: {'line': b"writing manifest file 'tennis_court.egg-info/SOURCES.txt'\n"}
+[0.545221] (robot_pkg) JobEnded: {'identifier': 'robot_pkg', 'rc': 0}
+[0.547299] (tennis_court) StdoutLine: {'line': b"writing manifest file 'scripts.egg-info/SOURCES.txt'\n"}
+[0.549945] (tennis_court) StdoutLine: {'line': b'[ 22%] Built target tennis_court__rosidl_generator_c\n'}
+[0.560334] (tennis_court) StdoutLine: {'line': b'[ 28%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[0.560822] (tennis_court) StdoutLine: {'line': b'[ 28%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[0.563188] (tennis_court) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[0.567742] (tennis_court) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/tennis_court__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tennis_court/msg/detail/ball_manager_stats__type_support.cpp.o\x1b[0m\n'}
+[0.576798] (tennis_court) StdoutLine: {'line': b'[ 34%] Built target ament_cmake_python_build_tennis_court_egg\n'}
+[0.581218] (tennis_court) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/tennis_court__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tennis_court/msg/detail/dds_fastrtps/ball_manager_stats__type_support.cpp.o\x1b[0m\n'}
+[0.600435] (-) TimerEvent: {}
+[0.604519] (tennis_court) StdoutLine: {'line': b"reading manifest file 'scripts.egg-info/SOURCES.txt'\n"}
+[0.606096] (tennis_court) StdoutLine: {'line': b"writing manifest file 'scripts.egg-info/SOURCES.txt'\n"}
+[0.636651] (tennis_court) StdoutLine: {'line': b'[ 37%] Built target ament_cmake_python_build_scripts_egg\n'}
+[0.700563] (-) TimerEvent: {}
+[0.739484] (tennis_court) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/tennis_court__rosidl_typesupport_c.dir/rosidl_typesupport_c/tennis_court/msg/ball_manager_stats__type_support.cpp.o\x1b[0m\n'}
+[0.750019] (tennis_court) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/tennis_court__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tennis_court/msg/detail/ball_manager_stats__type_support_c.cpp.o\x1b[0m\n'}
+[0.781286] (tennis_court) StdoutLine: {'line': b'[ 45%] \x1b[32m\x1b[1mLinking CXX shared library libtennis_court__rosidl_typesupport_c.so\x1b[0m\n'}
+[0.800664] (-) TimerEvent: {}
+[0.812691] (tennis_court) StdoutLine: {'line': b'[ 48%] \x1b[32m\x1b[1mLinking CXX shared library libtennis_court__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[0.823150] (tennis_court) StdoutLine: {'line': b'[ 48%] Built target tennis_court__rosidl_typesupport_c\n'}
+[0.836758] (tennis_court) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding C object CMakeFiles/tennis_court__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tennis_court/msg/detail/ball_manager_stats__type_support.c.o\x1b[0m\n'}
+[0.849478] (tennis_court) StdoutLine: {'line': b'[ 51%] Built target tennis_court__rosidl_typesupport_cpp\n'}
+[0.868340] (tennis_court) StdoutLine: {'line': b'[ 54%] \x1b[34m\x1b[1mAutomatic MOC for target gui_tennis_court_overlay\x1b[0m\n'}
+[0.894036] (tennis_court) StdoutLine: {'line': b'[ 57%] \x1b[32m\x1b[1mLinking C shared library libtennis_court__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[0.900767] (-) TimerEvent: {}
+[0.926342] (tennis_court) StdoutLine: {'line': b'[ 57%] Built target tennis_court__rosidl_typesupport_introspection_c\n'}
+[0.930854] (tennis_court) StdoutLine: {'line': b'[ 60%] \x1b[32m\x1b[1mLinking CXX shared library libtennis_court__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[0.964653] (tennis_court) StdoutLine: {'line': b'[ 62%] \x1b[32m\x1b[1mLinking CXX shared library libtennis_court__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[0.967007] (tennis_court) StdoutLine: {'line': b'[ 62%] Built target tennis_court__rosidl_typesupport_introspection_cpp\n'}
+[1.000882] (-) TimerEvent: {}
+[1.028049] (vision_pkg) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/vision_pkg', 'build', '--build-base', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/build', 'install', '--record', '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/install.log', '--single-version-externally-managed'], 'cwd': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/vision_pkg', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'apolline', 'LC_TIME': 'fr_FR.UTF-8', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/apolline', 'OLDPWD': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PS1': '(humble) \\[\\033[01;36m\\]$(parse_git_name)\\[\\033[00m\\]\\[\\033[01;36m\\]$(parse_git_branch)\\[\\033[00m\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\] \\n   \\[\\033[01;33m\\]$ \\[\\033[00m\\]', 'LC_MONETARY': 'fr_FR.UTF-8', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2709', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=fb40ad21f5462924e07c6fbc653e31cc', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'LOGNAME': 'apolline', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'apolline', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '1', 'PATH': '/opt/ros/humble/bin:/home/apolline/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/mooncake:@/tmp/.ICE-unix/2709,unix/mooncake:/tmp/.ICE-unix/2709', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'fr_FR.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/6eb02291_d1e6_40e8_b025_d56dbede658d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'fr_FR.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.A3QID2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.420', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '50', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'fr_FR.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'fr_FR.UTF-8', 'LC_IDENTIFICATION': 'fr_FR.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=fb40ad21f5462924e07c6fbc653e31cc', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/prefix_override:/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'fr_FR.UTF-8', 'LC_PAPER': 'fr_FR.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[1.030382] (tennis_court) StdoutLine: {'line': b'[ 62%] Built target tennis_court__rosidl_typesupport_fastrtps_cpp\n'}
+[1.089701] (tennis_court) StdoutLine: {'line': b'[ 65%] \x1b[32m\x1b[1mLinking CXX shared library libtennis_court__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[1.100954] (-) TimerEvent: {}
+[1.148835] (tennis_court) StdoutLine: {'line': b'[ 65%] Built target tennis_court__rosidl_typesupport_fastrtps_c\n'}
+[1.166453] (tennis_court) StdoutLine: {'line': b'[ 65%] Built target tennis_court\n'}
+[1.183584] (tennis_court) StdoutLine: {'line': b'[ 68%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[1.201076] (-) TimerEvent: {}
+[1.206592] (vision_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[1.221012] (vision_pkg) StdoutLine: {'line': b'writing ../../build/vision_pkg/vision_pkg.egg-info/PKG-INFO\n'}
+[1.222088] (vision_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/vision_pkg/vision_pkg.egg-info/dependency_links.txt\n'}
+[1.222725] (vision_pkg) StdoutLine: {'line': b'writing requirements to ../../build/vision_pkg/vision_pkg.egg-info/requires.txt\n'}
+[1.223034] (vision_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/vision_pkg/vision_pkg.egg-info/top_level.txt\n'}
+[1.301219] (-) TimerEvent: {}
+[1.328824] (vision_pkg) StdoutLine: {'line': b"reading manifest file '../../build/vision_pkg/vision_pkg.egg-info/SOURCES.txt'\n"}
+[1.331659] (vision_pkg) StdoutLine: {'line': b"writing manifest file '../../build/vision_pkg/vision_pkg.egg-info/SOURCES.txt'\n"}
+[1.332100] (vision_pkg) StdoutLine: {'line': b'running build\n'}
+[1.332481] (vision_pkg) StdoutLine: {'line': b'running build_py\n'}
+[1.333449] (vision_pkg) StdoutLine: {'line': b'running install\n'}
+[1.333754] (vision_pkg) StderrLine: {'line': b'/home/apolline/.local/lib/python3.10/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.\n'}
+[1.333979] (vision_pkg) StderrLine: {'line': b'!!\n'}
+[1.334151] (vision_pkg) StderrLine: {'line': b'\n'}
+[1.334293] (vision_pkg) StderrLine: {'line': b'        ********************************************************************************\n'}
+[1.334433] (vision_pkg) StderrLine: {'line': b'        Please avoid running ``setup.py`` directly.\n'}
+[1.334563] (vision_pkg) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[1.334690] (vision_pkg) StderrLine: {'line': b'        standards-based tools.\n'}
+[1.334819] (vision_pkg) StderrLine: {'line': b'\n'}
+[1.334977] (vision_pkg) StderrLine: {'line': b'        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.\n'}
+[1.335083] (vision_pkg) StderrLine: {'line': b'        ********************************************************************************\n'}
+[1.335180] (vision_pkg) StderrLine: {'line': b'\n'}
+[1.335274] (vision_pkg) StderrLine: {'line': b'!!\n'}
+[1.335365] (vision_pkg) StderrLine: {'line': b'  self.initialize_options()\n'}
+[1.340378] (vision_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[1.356509] (vision_pkg) StdoutLine: {'line': b'running install_data\n'}
+[1.368299] (vision_pkg) StderrLine: {'line': b"warning: install_data: setup script did not provide a directory for 'share/vision_pkg/models' -- installing right in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg'\n"}
+[1.368680] (vision_pkg) StderrLine: {'line': b'\n'}
+[1.368865] (vision_pkg) StderrLine: {'line': b"error: can't copy 'share/vision_pkg/models': doesn't exist or not a regular file\n"}
+[1.384673] (vision_pkg) CommandEnded: {'returncode': 1}
+[1.385207] (vision_pkg) JobEnded: {'identifier': 'vision_pkg', 'rc': 1}
+[1.401313] (-) TimerEvent: {}
+[1.407987] (tennis_court) StdoutLine: {'line': b'[ 68%] Built target tennis_court__py\n'}
+[1.423576] (tennis_court) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding C object CMakeFiles/tennis_court__rosidl_generator_py.dir/rosidl_generator_py/tennis_court/msg/_ball_manager_stats_s.c.o\x1b[0m\n'}
+[1.501567] (-) TimerEvent: {}
+[1.538173] (tennis_court) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tennis_court/libtennis_court__rosidl_generator_py.so\x1b[0m\n'}
+[1.567578] (tennis_court) StdoutLine: {'line': b'[ 74%] Built target tennis_court__rosidl_generator_py\n'}
+[1.584114] (tennis_court) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding C object CMakeFiles/tennis_court__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tennis_court/_tennis_court_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[1.584517] (tennis_court) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding C object CMakeFiles/tennis_court__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/tennis_court/_tennis_court_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[1.584749] (tennis_court) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/tennis_court__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/tennis_court/_tennis_court_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[1.601718] (-) TimerEvent: {}
+[1.702076] (-) TimerEvent: {}
+[1.703357] (tennis_court) StdoutLine: {'line': b'[ 85%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tennis_court/tennis_court_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[1.706135] (tennis_court) StdoutLine: {'line': b'[ 88%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tennis_court/tennis_court_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[1.720949] (tennis_court) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tennis_court/tennis_court_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[1.732616] (tennis_court) StdoutLine: {'line': b'[ 91%] Built target tennis_court__rosidl_typesupport_c__pyext\n'}
+[1.738320] (tennis_court) StdoutLine: {'line': b'[ 91%] Built target tennis_court__rosidl_typesupport_fastrtps_c__pyext\n'}
+[1.753241] (tennis_court) StdoutLine: {'line': b'[ 91%] Built target tennis_court__rosidl_typesupport_introspection_c__pyext\n'}
+[1.762798] (tennis_court) StdoutLine: {'line': b'[ 91%] Built target gui_tennis_court_overlay_autogen\n'}
+[1.778201] (tennis_court) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding CXX object CMakeFiles/gui_tennis_court_overlay.dir/gui_tennis_court_overlay_autogen/mocs_compilation.cpp.o\x1b[0m\n'}
+[1.778969] (tennis_court) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding CXX object CMakeFiles/gui_tennis_court_overlay.dir/src/GUITennisCourtOverlay.cc.o\x1b[0m\n'}
+[1.802293] (-) TimerEvent: {}
+[1.902665] (-) TimerEvent: {}
+[2.003046] (-) TimerEvent: {}
+[2.103457] (-) TimerEvent: {}
+[2.203805] (-) TimerEvent: {}
+[2.304245] (-) TimerEvent: {}
+[2.404660] (-) TimerEvent: {}
+[2.505200] (-) TimerEvent: {}
+[2.605593] (-) TimerEvent: {}
+[2.706076] (-) TimerEvent: {}
+[2.806516] (-) TimerEvent: {}
+[2.907129] (-) TimerEvent: {}
+[3.007457] (-) TimerEvent: {}
+[3.107845] (-) TimerEvent: {}
+[3.208513] (-) TimerEvent: {}
+[3.308874] (-) TimerEvent: {}
+[3.409273] (-) TimerEvent: {}
+[3.509709] (-) TimerEvent: {}
+[3.610051] (-) TimerEvent: {}
+[3.710373] (-) TimerEvent: {}
+[3.810951] (-) TimerEvent: {}
+[3.911359] (-) TimerEvent: {}
+[4.011955] (-) TimerEvent: {}
+[4.112564] (-) TimerEvent: {}
+[4.213063] (-) TimerEvent: {}
+[4.313555] (-) TimerEvent: {}
+[4.414191] (-) TimerEvent: {}
+[4.514569] (-) TimerEvent: {}
+[4.614915] (-) TimerEvent: {}
+[4.715487] (-) TimerEvent: {}
+[4.815951] (-) TimerEvent: {}
+[4.916510] (-) TimerEvent: {}
+[5.017014] (-) TimerEvent: {}
+[5.117425] (-) TimerEvent: {}
+[5.217860] (-) TimerEvent: {}
+[5.318285] (-) TimerEvent: {}
+[5.418723] (-) TimerEvent: {}
+[5.519290] (-) TimerEvent: {}
+[5.619754] (-) TimerEvent: {}
+[5.720194] (-) TimerEvent: {}
+[5.820714] (-) TimerEvent: {}
+[5.921317] (-) TimerEvent: {}
+[6.021819] (-) TimerEvent: {}
+[6.122315] (-) TimerEvent: {}
+[6.222870] (-) TimerEvent: {}
+[6.323416] (-) TimerEvent: {}
+[6.424134] (-) TimerEvent: {}
+[6.524786] (-) TimerEvent: {}
+[6.625321] (-) TimerEvent: {}
+[6.725677] (-) TimerEvent: {}
+[6.826167] (-) TimerEvent: {}
+[6.926800] (-) TimerEvent: {}
+[7.027478] (-) TimerEvent: {}
+[7.128122] (-) TimerEvent: {}
+[7.228639] (-) TimerEvent: {}
+[7.329249] (-) TimerEvent: {}
+[7.429699] (-) TimerEvent: {}
+[7.530250] (-) TimerEvent: {}
+[7.630886] (-) TimerEvent: {}
+[7.731597] (-) TimerEvent: {}
+[7.832056] (-) TimerEvent: {}
+[7.932623] (-) TimerEvent: {}
+[8.033247] (-) TimerEvent: {}
+[8.133680] (-) TimerEvent: {}
+[8.234041] (-) TimerEvent: {}
+[8.334433] (-) TimerEvent: {}
+[8.434776] (-) TimerEvent: {}
+[8.535289] (-) TimerEvent: {}
+[8.635785] (-) TimerEvent: {}
+[8.736425] (-) TimerEvent: {}
+[8.836976] (-) TimerEvent: {}
+[8.937735] (-) TimerEvent: {}
+[9.038154] (-) TimerEvent: {}
+[9.138535] (-) TimerEvent: {}
+[9.238957] (-) TimerEvent: {}
+[9.339764] (-) TimerEvent: {}
+[9.440537] (-) TimerEvent: {}
+[9.541059] (-) TimerEvent: {}
+[9.641643] (-) TimerEvent: {}
+[9.742096] (-) TimerEvent: {}
+[9.842432] (-) TimerEvent: {}
+[9.942779] (-) TimerEvent: {}
+[10.043217] (-) TimerEvent: {}
+[10.143499] (-) TimerEvent: {}
+[10.244129] (-) TimerEvent: {}
+[10.344568] (-) TimerEvent: {}
+[10.445169] (-) TimerEvent: {}
+[10.545807] (-) TimerEvent: {}
+[10.646241] (-) TimerEvent: {}
+[10.746732] (-) TimerEvent: {}
+[10.847235] (-) TimerEvent: {}
+[10.947608] (-) TimerEvent: {}
+[11.048050] (-) TimerEvent: {}
+[11.148667] (-) TimerEvent: {}
+[11.249302] (-) TimerEvent: {}
+[11.349891] (-) TimerEvent: {}
+[11.450323] (-) TimerEvent: {}
+[11.550829] (-) TimerEvent: {}
+[11.651328] (-) TimerEvent: {}
+[11.752028] (-) TimerEvent: {}
+[11.852743] (-) TimerEvent: {}
+[11.953510] (-) TimerEvent: {}
+[12.054150] (-) TimerEvent: {}
+[12.154586] (-) TimerEvent: {}
+[12.255104] (-) TimerEvent: {}
+[12.355619] (-) TimerEvent: {}
+[12.456160] (-) TimerEvent: {}
+[12.556633] (-) TimerEvent: {}
+[12.657138] (-) TimerEvent: {}
+[12.757590] (-) TimerEvent: {}
+[12.857959] (-) TimerEvent: {}
+[12.958496] (-) TimerEvent: {}
+[13.058993] (-) TimerEvent: {}
+[13.159540] (-) TimerEvent: {}
+[13.260061] (-) TimerEvent: {}
+[13.360756] (-) TimerEvent: {}
+[13.461291] (-) TimerEvent: {}
+[13.561834] (-) TimerEvent: {}
+[13.662167] (-) TimerEvent: {}
+[13.762852] (-) TimerEvent: {}
+[13.863610] (-) TimerEvent: {}
+[13.964401] (-) TimerEvent: {}
+[14.053687] (tennis_court) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libgui_tennis_court_overlay.so\x1b[0m\n'}
+[14.064467] (-) TimerEvent: {}
+[14.164826] (-) TimerEvent: {}
+[14.265582] (-) TimerEvent: {}
+[14.366064] (-) TimerEvent: {}
+[14.466546] (-) TimerEvent: {}
+[14.567392] (-) TimerEvent: {}
+[14.668153] (-) TimerEvent: {}
+[14.768752] (-) TimerEvent: {}
+[14.869572] (-) TimerEvent: {}
+[14.970234] (-) TimerEvent: {}
+[15.070820] (-) TimerEvent: {}
+[15.171375] (-) TimerEvent: {}
+[15.272066] (-) TimerEvent: {}
+[15.372534] (-) TimerEvent: {}
+[15.422232] (tennis_court) StdoutLine: {'line': b'[100%] Built target gui_tennis_court_overlay\n'}
+[15.443541] (tennis_court) JobEnded: {'identifier': 'tennis_court', 'rc': 'SIGINT'}
+[15.457989] (-) EventReactorShutdown: {}

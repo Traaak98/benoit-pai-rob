@@ -1,0 +1,332 @@
+[0.577s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build'][0m
+[0.577s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fe274ce9570>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fe274ce8760>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fe274ce8760>>)[0m
+[0.610s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[0.610s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[0.610s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[0.610s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[0.610s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[0.610s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[0.610s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws'
+[0.611s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.611s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[0.611s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[0.611s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[0.611s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[0.611s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[0.611s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[0.611s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[0.611s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[0.619s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[0.619s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[0.619s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[0.619s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[0.619s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore_ament_install'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_pkg']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_pkg'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_meta']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_meta'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ros']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ros'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['cmake', 'python']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'cmake'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['python_setup_py']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python_setup_py'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/custom_msg) by extensions ['ignore', 'ignore_ament_install']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/custom_msg) by extension 'ignore'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/custom_msg) by extension 'ignore_ament_install'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/custom_msg) by extensions ['colcon_pkg']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/custom_msg) by extension 'colcon_pkg'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/custom_msg) by extensions ['colcon_meta']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/custom_msg) by extension 'colcon_meta'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/custom_msg) by extensions ['ros']
+[0.621s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/custom_msg) by extension 'ros'
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/custom_msg' with type 'ros.ament_cmake' and name 'custom_msg'[0m
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_pkg) by extension 'ignore'
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_pkg) by extension 'ignore_ament_install'
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_pkg) by extensions ['colcon_pkg']
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_pkg) by extension 'colcon_pkg'
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_pkg) by extensions ['colcon_meta']
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_pkg) by extension 'colcon_meta'
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_pkg) by extensions ['ros']
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_pkg) by extension 'ros'
+[0.622s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_pkg' with type 'ros.ament_cmake' and name 'robot_pkg'[0m
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/tennis_court) by extensions ['ignore', 'ignore_ament_install']
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/tennis_court) by extension 'ignore'
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/tennis_court) by extension 'ignore_ament_install'
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/tennis_court) by extensions ['colcon_pkg']
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/tennis_court) by extension 'colcon_pkg'
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/tennis_court) by extensions ['colcon_meta']
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/tennis_court) by extension 'colcon_meta'
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/tennis_court) by extensions ['ros']
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/tennis_court) by extension 'ros'
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/tennis_court' with type 'ros.ament_cmake' and name 'tennis_court'[0m
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_pkg) by extension 'ignore'
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_pkg) by extension 'ignore_ament_install'
+[0.623s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_pkg) by extensions ['colcon_pkg']
+[0.624s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_pkg) by extension 'colcon_pkg'
+[0.624s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_pkg) by extensions ['colcon_meta']
+[0.624s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_pkg) by extension 'colcon_meta'
+[0.624s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_pkg) by extensions ['ros']
+[0.624s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_pkg) by extension 'ros'
+[0.624s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/vision_pkg' with type 'ros.ament_python' and name 'vision_pkg'[0m
+[0.624s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[0.624s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[0.624s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[0.624s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[0.624s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[0.677s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) check parameters
+[0.677s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) discover
+[0.695s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 335 installed packages in /opt/ros/humble[0m
+[0.696s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) using defaults
+[0.748s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'custom_msg' build argument 'cmake_args' from command line to 'None'
+[0.748s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'custom_msg' build argument 'cmake_target' from command line to 'None'
+[0.748s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'custom_msg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.748s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'custom_msg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.748s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'custom_msg' build argument 'cmake_clean_first' from command line to 'False'
+[0.748s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'custom_msg' build argument 'cmake_force_configure' from command line to 'False'
+[0.748s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'custom_msg' build argument 'ament_cmake_args' from command line to 'None'
+[0.748s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'custom_msg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.748s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'custom_msg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.748s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'custom_msg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/custom_msg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg', 'merge_install': False, 'path': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/custom_msg', 'symlink_install': False, 'test_result_base': None}[0m
+[0.756s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_pkg' build argument 'cmake_args' from command line to 'None'
+[0.756s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_pkg' build argument 'cmake_target' from command line to 'None'
+[0.757s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.757s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.757s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.757s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.757s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.757s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.757s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.757s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'robot_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg', 'merge_install': False, 'path': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/robot_pkg', 'symlink_install': False, 'test_result_base': None}[0m
+[0.765s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'tennis_court' build argument 'cmake_args' from command line to 'None'
+[0.765s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'tennis_court' build argument 'cmake_target' from command line to 'None'
+[0.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'tennis_court' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'tennis_court' build argument 'cmake_clean_cache' from command line to 'False'
+[0.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'tennis_court' build argument 'cmake_clean_first' from command line to 'False'
+[0.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'tennis_court' build argument 'cmake_force_configure' from command line to 'False'
+[0.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'tennis_court' build argument 'ament_cmake_args' from command line to 'None'
+[0.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'tennis_court' build argument 'catkin_cmake_args' from command line to 'None'
+[0.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'tennis_court' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.766s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'tennis_court' with the following arguments: {'ament_cmake_args': None, 'build_base': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court', 'merge_install': False, 'path': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/tennis_court', 'symlink_install': False, 'test_result_base': None}[0m
+[0.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_pkg' build argument 'cmake_args' from command line to 'None'
+[0.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_pkg' build argument 'cmake_target' from command line to 'None'
+[0.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.775s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'vision_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg', 'merge_install': False, 'path': '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/vision_pkg', 'symlink_install': False, 'test_result_base': None}[0m
+[0.783s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[0.793s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[0.793s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/custom_msg' with build type 'ament_cmake'
+[0.793s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/custom_msg'
+[0.803s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.803s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.803s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.821s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/robot_pkg' with build type 'ament_cmake'
+[0.821s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/robot_pkg'
+[0.831s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.831s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.850s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/tennis_court' with build type 'ament_cmake'
+[0.850s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/tennis_court'
+[0.859s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.859s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.878s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/vision_pkg' with build type 'ament_python'
+[0.878s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vision_pkg', 'ament_prefix_path')
+[0.887s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/hook/ament_prefix_path.ps1'
+[0.887s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/hook/ament_prefix_path.dsv'
+[0.888s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/hook/ament_prefix_path.sh'
+[0.897s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.897s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.918s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/custom_msg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/custom_msg -- -j16 -l16[0m
+[0.920s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg -- -j16 -l16[0m
+[0.923s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court -- -j16 -l16[0m
+[1.070s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/vision_pkg'
+[1.081s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.081s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[1.106s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg -- -j16 -l16[0m
+[1.131s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg[0m
+[1.137s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_pkg)
+[1.138s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/robot_pkg[0m
+[1.162s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg' for CMake module files
+[1.163s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg' for CMake config files
+[1.163s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_pkg', 'cmake_prefix_path')
+[1.185s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/hook/cmake_prefix_path.ps1'
+[1.185s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/hook/cmake_prefix_path.dsv'
+[1.186s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/hook/cmake_prefix_path.sh'
+[1.186s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/bin'
+[1.186s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/lib/pkgconfig/robot_pkg.pc'
+[1.187s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/lib/python3.10/site-packages'
+[1.187s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/bin'
+[1.210s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.ps1'
+[1.210s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.dsv'
+[1.211s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.sh'
+[1.212s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.bash'
+[1.212s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.zsh'
+[1.213s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/colcon-core/packages/robot_pkg)
+[1.248s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_pkg)
+[1.259s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg' for CMake module files
+[1.259s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg' for CMake config files
+[1.260s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_pkg', 'cmake_prefix_path')
+[1.270s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/hook/cmake_prefix_path.ps1'
+[1.270s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/hook/cmake_prefix_path.dsv'
+[1.270s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/hook/cmake_prefix_path.sh'
+[1.271s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/bin'
+[1.271s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/lib/pkgconfig/robot_pkg.pc'
+[1.271s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/lib/python3.10/site-packages'
+[1.271s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/bin'
+[1.281s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.ps1'
+[1.282s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.dsv'
+[1.282s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.sh'
+[1.282s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.bash'
+[1.282s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/robot_pkg/package.zsh'
+[1.283s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/robot_pkg/share/colcon-core/packages/robot_pkg)
+[1.285s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court -- -j16 -l16[0m
+[1.286s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/custom_msg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/custom_msg -- -j16 -l16[0m
+[1.316s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/custom_msg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/custom_msg[0m
+[1.319s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court[0m
+[1.352s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(custom_msg)
+[1.355s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/custom_msg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/custom_msg[0m
+[1.375s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg' for CMake module files
+[1.376s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg' for CMake config files
+[1.380s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('custom_msg', 'cmake_prefix_path')
+[1.389s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/cmake_prefix_path.ps1'
+[1.390s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/cmake_prefix_path.dsv'
+[1.390s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/cmake_prefix_path.sh'
+[1.390s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/lib'
+[1.390s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('custom_msg', 'ld_library_path_lib')
+[1.401s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/ld_library_path_lib.ps1'
+[1.401s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/ld_library_path_lib.dsv'
+[1.401s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/ld_library_path_lib.sh'
+[1.401s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/bin'
+[1.402s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/lib/pkgconfig/custom_msg.pc'
+[1.402s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/lib/python3.10/site-packages'
+[1.402s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/bin'
+[1.413s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/package.ps1'
+[1.413s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/package.dsv'
+[1.414s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/package.sh'
+[1.414s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/package.bash'
+[1.414s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/package.zsh'
+[1.414s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/colcon-core/packages/custom_msg)
+[1.415s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(tennis_court)
+[1.416s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/tennis_court[0m
+[1.427s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court' for CMake module files
+[1.428s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court' for CMake config files
+[1.428s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('tennis_court', 'cmake_prefix_path')
+[1.439s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/cmake_prefix_path.ps1'
+[1.439s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/cmake_prefix_path.dsv'
+[1.439s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/cmake_prefix_path.sh'
+[1.440s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/lib'
+[1.440s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('tennis_court', 'ld_library_path_lib')
+[1.451s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/ld_library_path_lib.ps1'
+[1.451s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/ld_library_path_lib.dsv'
+[1.451s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/ld_library_path_lib.sh'
+[1.451s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/bin'
+[1.451s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/lib/pkgconfig/tennis_court.pc'
+[1.451s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/lib/python3.10/site-packages'
+[1.452s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/bin'
+[1.462s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/package.ps1'
+[1.462s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/package.dsv'
+[1.463s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/package.sh'
+[1.463s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/package.bash'
+[1.463s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/package.zsh'
+[1.463s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/colcon-core/packages/tennis_court)
+[1.474s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(custom_msg)
+[1.484s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg' for CMake module files
+[1.484s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg' for CMake config files
+[1.484s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('custom_msg', 'cmake_prefix_path')
+[1.494s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/cmake_prefix_path.ps1'
+[1.495s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/cmake_prefix_path.dsv'
+[1.495s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/cmake_prefix_path.sh'
+[1.495s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/lib'
+[1.495s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('custom_msg', 'ld_library_path_lib')
+[1.505s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/ld_library_path_lib.ps1'
+[1.505s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/ld_library_path_lib.dsv'
+[1.505s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/hook/ld_library_path_lib.sh'
+[1.506s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/bin'
+[1.506s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/lib/pkgconfig/custom_msg.pc'
+[1.506s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/lib/python3.10/site-packages'
+[1.506s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/bin'
+[1.515s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/package.ps1'
+[1.516s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/package.dsv'
+[1.516s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/package.sh'
+[1.516s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/package.bash'
+[1.516s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/custom_msg/package.zsh'
+[1.516s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/custom_msg/share/colcon-core/packages/custom_msg)
+[1.526s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(tennis_court)
+[1.535s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court' for CMake module files
+[1.536s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court' for CMake config files
+[1.536s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('tennis_court', 'cmake_prefix_path')
+[1.545s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/cmake_prefix_path.ps1'
+[1.546s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/cmake_prefix_path.dsv'
+[1.546s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/cmake_prefix_path.sh'
+[1.546s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/lib'
+[1.546s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('tennis_court', 'ld_library_path_lib')
+[1.556s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/ld_library_path_lib.ps1'
+[1.556s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/ld_library_path_lib.dsv'
+[1.556s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/hook/ld_library_path_lib.sh'
+[1.556s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/bin'
+[1.556s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/lib/pkgconfig/tennis_court.pc'
+[1.556s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/lib/python3.10/site-packages'
+[1.557s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/bin'
+[1.566s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/package.ps1'
+[1.567s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/package.dsv'
+[1.567s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/package.sh'
+[1.567s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/package.bash'
+[1.568s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/tennis_court/package.zsh'
+[1.568s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/tennis_court/share/colcon-core/packages/tennis_court)
+[1.570s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/vision_pkg': PYTHONPATH=/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/prefix_override:/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/vision_pkg build --build-base /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/build install --record /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/install.log --single-version-externally-managed[0m
+[1.901s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/vision_pkg' returned '0': PYTHONPATH=/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/prefix_override:/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/vision_pkg build --build-base /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/build install --record /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/install.log --single-version-externally-managed[0m
+[1.909s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg' for CMake module files
+[1.909s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg' for CMake config files
+[1.910s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/lib'
+[1.910s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/bin'
+[1.910s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/lib/pkgconfig/vision_pkg.pc'
+[1.910s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/lib/python3.10/site-packages'
+[1.910s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vision_pkg', 'pythonpath')
+[1.918s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/hook/pythonpath.ps1'
+[1.918s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/hook/pythonpath.dsv'
+[1.918s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/hook/pythonpath.sh'
+[1.918s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/bin'
+[1.918s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(vision_pkg)
+[1.927s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/package.ps1'
+[1.927s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/package.dsv'
+[1.927s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/package.sh'
+[1.927s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/package.bash'
+[1.928s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/vision_pkg/package.zsh'
+[1.928s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/share/colcon-core/packages/vision_pkg)
+[1.928s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[1.928s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[1.928s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '0'[0m
+[1.928s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[1.939s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.939s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.939s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[1.953s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[1.961s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/local_setup.ps1'
+[1.962s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/_local_setup_util_ps1.py'
+[1.962s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/setup.ps1'
+[1.971s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/local_setup.sh'
+[1.971s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/_local_setup_util_sh.py'
+[1.971s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/setup.sh'
+[1.981s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/local_setup.bash'
+[1.981s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/setup.bash'
+[1.990s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/local_setup.zsh'
+[1.990s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/setup.zsh'

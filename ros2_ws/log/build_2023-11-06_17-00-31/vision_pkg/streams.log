@@ -1,0 +1,32 @@
+[0.923s] Invoking command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/vision_pkg': PYTHONPATH=/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/prefix_override:/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/vision_pkg build --build-base /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/build install --record /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/install.log --single-version-externally-managed
+[1.057s] running egg_info
+[1.066s] writing ../../build/vision_pkg/vision_pkg.egg-info/PKG-INFO
+[1.066s] writing dependency_links to ../../build/vision_pkg/vision_pkg.egg-info/dependency_links.txt
+[1.067s] writing requirements to ../../build/vision_pkg/vision_pkg.egg-info/requires.txt
+[1.067s] writing top-level names to ../../build/vision_pkg/vision_pkg.egg-info/top_level.txt
+[1.145s] reading manifest file '../../build/vision_pkg/vision_pkg.egg-info/SOURCES.txt'
+[1.146s] writing manifest file '../../build/vision_pkg/vision_pkg.egg-info/SOURCES.txt'
+[1.146s] running build
+[1.146s] running build_py
+[1.147s] running install
+[1.147s] /home/apolline/.local/lib/python3.10/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[1.147s] !!
+[1.147s] 
+[1.148s]         ********************************************************************************
+[1.148s]         Please avoid running ``setup.py`` directly.
+[1.148s]         Instead, use pypa/build, pypa/installer or other
+[1.148s]         standards-based tools.
+[1.148s] 
+[1.148s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[1.148s]         ********************************************************************************
+[1.148s] 
+[1.148s] !!
+[1.148s]   self.initialize_options()
+[1.151s] running install_lib
+[1.161s] running install_data
+[1.170s] running install_egg_info
+[1.180s] removing '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/lib/python3.10/site-packages/vision_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[1.180s] Copying ../../build/vision_pkg/vision_pkg.egg-info to /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/lib/python3.10/site-packages/vision_pkg-0.0.0-py3.10.egg-info
+[1.180s] running install_scripts
+[1.210s] writing list of installed files to '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/install.log'
+[1.256s] Invoked command in '/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/src/vision_pkg' returned '0': PYTHONPATH=/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/prefix_override:/media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/install/vision_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/vision_pkg build --build-base /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/build install --record /media/apolline/B2C2CC8EC2CC586D/apolline/Ecole/ENSTA/M2/IS/benoit-pai-rob/ros2_ws/build/vision_pkg/install.log --single-version-externally-managed
