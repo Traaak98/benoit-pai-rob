@@ -64,7 +64,6 @@ deploy-job:      # This job runs in the deploy stage.
     - rosdep update
     - source /opt/ros/humble/setup.bash
     - cd ros2_ws/
-    - ls
     - source install/setup.bash
     - cd src/benoit_pairob/
     - rosdep update
