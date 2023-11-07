@@ -53,6 +53,7 @@ deploy-job:      # This job runs in the deploy stage.
     # catkin_prepare_release
     # git add src/*/CHANGELOG.rst
     # git commit -m "CHANGELOG.rst"
+    - ls -d $PWD/*
     - echo "yaml file:/home/devils_balls_guest/benoit-pai-rob/bloom_config.yml" >> /etc/ros/rosdep/sources.list.d/10-local.list # vérfier le path
     - rosdep update
     - source /opt/ros/humble/setup.bash
