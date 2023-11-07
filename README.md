@@ -45,23 +45,28 @@ Lien vers notre gestionnaire de projet Agile : [Taïga](https://tree.taiga.io/pr
 
 ## Structure du dépôt
 
-Ce dépôt doit être cloné dans le dossier `src` d'un workspace ROS 2.
 
-### Package `tennis_court`
-
-Le dossier `tennis_court` est un package ROS contenant le monde dans lequel le robot ramasseur de balle devra évoluer ainsi qu'un script permettant de faire apparaître des balles dans la simulation.
-Ce package ne doit pas être modifié.
-Consulter le [README](tennis_court/README.md) du package pour plus d'informations.
+Le dépôt contient plusieurs dossiers :
+- Un dossier 'Debriefing-RDV-Client-Template'
+- Un dossier contenant des images
+- Un dossier contenant les sources ros2
 
 
-### Documents
+### Dossier debriefs
 
-Le dossier `docs` contient tous les documents utiles au projet:
-- Des [instructions pour utiliser Git](docs/GitWorkflow_fork.md)
-- Un [Mémo pour ROS 2 et Gazebo](docs/Memo_ROS2.pdf)
-- Les [slides de la présentation Git](docs/GitPresentation.pdf)
+Le dossier `Debriefing-RDV-Client-Template` est un dossier contenant les différents compte-rendus de chaque sprint en version odt et en version pdf, disponibles pour le client.
+
+### Dossier ros2_ws/src
+
+Ce dossier contient les multiples packages ROS2 Humble nécessaires au fonctionnement du robot :
+- Un package 'benoit_pairob', contenant la simulation et les sources du robot en lui-même comme l'URDF,
+- Un package 'my_robot_control', un package pour le contrôle à la télécommande,
+- Un package 'robot_pkg', un package pour le contrôle autonome,
+- Un package 'tennis_court', contenant le package initial avec la simulation du terrain de tennis,
+- Un package 'vision_pkg', contenant les sources relatives à la vision du robot.
 
 
-### Rapports
+### Dossier Images
 
-Le dossier `reports` doit être rempli avec les rapports d'[objectifs](../reports/GoalsTemplate.md) et de [rétrospectives](../reports/DebriefTemplate.md) en suivant les deux templates mis à disposition. Ces deux rapports doivent être rédigés respectivement au début et à la fin de chaque sprint.
+Le dossier img contient toutes les images que l'on peut montrer au client, ou afficher sur le README.md.
+
