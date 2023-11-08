@@ -58,8 +58,9 @@
     </collision>
 
     <xacro:box_inertia m="15" w="${base_width}" d="${base_length}" h="${base_height}"/>
-  </link>
 
+    <xacro:box_inertia m="15" w="${base_width}" d="${base_length}" h="${base_height}"/>
+  </link>
   <!-- Robot Footprint -->
   <link name="base_footprint"/>
 
@@ -93,6 +94,11 @@
     <child link="front_link"/>
     <origin xyz="${base_length/2} 0.0 ${-(base_height/2)}" rpy="0 0 0"/>
   </joint>
+  <gazebo reference="front_link">
+    <material>Gazebo</material>
+    <mu1 value="10"/>
+    <mu2 value="10"/>
+  </gazebo>
 
   <!-- Front Left -->
   <link name="front_left_link">
@@ -100,6 +106,7 @@
       <origin xyz="0 ${front_side_length/2} 0" rpy="0 0 0"/>
       <geometry>
         <box size="0.02 ${front_side_length} ${front_height}"/>
+
       </geometry>
       <material name="Gray">
         <color rgba="0.5 0.5 0.5 1.0"/>
@@ -120,8 +127,15 @@
     <child link="front_left_link"/>
     <origin xyz="0 ${base_width/2} 0" rpy="0 0 ${-pi/4}"/>
   </joint>
+  <gazebo reference="front_left_link">
+    <material>Gazebo</material>
+    <mu1 value="10"/>
+    <mu2 value="10"/>
+  </gazebo>
+  
 
   <!-- Front Right -->
+
   <link name="front_right_link">
     <visual>
       <origin xyz="0 ${-front_side_length/2} 0" rpy="0 0 0"/>
@@ -147,8 +161,18 @@
     <child link="front_right_link"/>
     <origin xyz="0 ${-base_width/2} 0" rpy="0 0 ${pi/4}"/>
   </joint>
+  
+  <gazebo reference="front_right_link">
+    <material>Gazebo</material>
+    <mu1 value="10"/>
+    <mu2 value="10"/>
+  </gazebo>
+
 
   <!-- Wheels -->
+
+
+
   <xacro:macro name="wheel" params="prefix x_reflect y_reflect">
     <link name="${prefix}_link">
       <visual>
@@ -379,7 +403,9 @@
       </plugin>
     </sensor>
   </gazebo>
+  
 
+  
   <!-- Diff Drive -->
   <gazebo>
     <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
@@ -388,9 +414,10 @@
       </ros>
   
       <!-- wheels -->
+      
       <left_joint>drivewhl_l_joint</left_joint>
       <right_joint>drivewhl_r_joint</right_joint>
-  
+
       <!-- kinematics -->
       <wheel_separation>0.5</wheel_separation>
       <wheel_diameter>0.2</wheel_diameter>
