@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'vision_pkg'
 
@@ -10,6 +12,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'models/weights_coco128'), glob('models/weights_coco128/*.pt')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -19,7 +22,7 @@ setup(
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [
+        'console_scripts': ['detect_ball = vision_pkg.detect_ball:main',
         ],
     },
 )
