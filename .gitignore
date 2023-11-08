@@ -6,3 +6,5 @@ log/
 install/
 
 *.mp4
+
+ros2_ws/src/tennis_court/
