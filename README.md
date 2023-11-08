@@ -38,7 +38,7 @@ source /opt/ros/humble/setup.bash
 
 ---
 ```bash
-`source install/setup.bash`
+source install/setup.bash
 ```
 ---
 Terminal 1 :
