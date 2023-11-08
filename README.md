@@ -50,10 +50,13 @@ Vous pouvez ensuite passer à la partie suivante pour tester si l'application fo
 
 #### Lancer la simulation avec ros2
 Commencez par build les packages :
+
+```bash
 source /opt/ros/humble/setup.bash
 cd ~/benoit-pai-rob/ros2_ws
 colcon build
 source install/setup.bash
+```
 
 Ouvrez 3 terminaux :
 Sur vos 3 terminaux sourcez ros2 humble et votre workspace
@@ -64,11 +67,11 @@ source /opt/ros/humble/setup.bash
 ```
 ---
 
----
 ```bash
 source install/setup.bash
 ```
 ---
+
 Terminal 1 :
 Lancez la simulation
 
