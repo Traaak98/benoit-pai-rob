@@ -71,6 +71,7 @@ deploy-job:      # This job runs in the deploy stage.
     - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb | grep custom)" "http://172.19.48.50:8081/repository/supernana_dev/"'
     # package vision_pkg
     - echo "Générer debian vision_pkg"
+    - ls -a
     - cd src/vision_pkg/
     - rosdep update
     - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
