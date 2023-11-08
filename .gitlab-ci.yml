@@ -19,13 +19,12 @@ build-job:       # This job runs in the build stage, which runs first.
     - cd ros2_ws/
     - rm -rf build/ install/ log/
     - source /opt/ros/humble/setup.bash
-    - colcon build --packages-select robot_pkg
-    - colcon build --packages-select vision_pkg
-    - colcon build --packages-select benoit-pairob
+    - colcon build --packages-skip tennis_court
     - echo "Compile complete."
   rules:
     - if: $CI_COMMIT_BRANCH =~ /^feature/ # pour tester
     - if: $CI_COMMIT_BRANCH == "develop"
+    - if: $CI_COMMIT_BRANCH == "main"   # normalement ça ne se fait pas de re-build sur main, mais pas de moyen trouvé pour conserver les fichiers de build après la fin de la pipeline de develop
 
 unit-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
@@ -47,20 +46,16 @@ lint-test-job:   # This job also runs in the test stage.
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
-  environment: production
+  environment: development
   dependencies:
     - build-job
   script:
     - echo "Installing applications..."
     - apt update
-    - apt install python3-bloom fakeroot dpkg-dev debhelper -y
+    - apt install python3-catkin-pkg python3-bloom fakeroot dpkg-dev debhelper -y
+    - catkin_prepare_release --no-push # pour le changement automatique de version
     - echo "Deploying application..."
-    # pour le changement automatique de version
-    # catkin_generate_changelog
-    # catkin_prepare_release
-    # git add src/*/CHANGELOG.rst
-    # git commit -m "CHANGELOG.rst"
-    - echo "yaml file:/builds/devils_balls_guest/benoit-pai-rob/bloom_config.yml" >> /etc/ros/rosdep/sources.list.d/10-local.list # vérfier le path
+    - echo "yaml file:/builds/devils_balls_guest/benoit-pai-rob/bloom_config.yml" >> /etc/ros/rosdep/sources.list.d/10-local.list # vérifier le path
     - rosdep update
     - source /opt/ros/humble/setup.bash
     - cd ros2_ws/
@@ -78,3 +73,33 @@ deploy-job:      # This job runs in the deploy stage.
   rules:
     - if: $CI_COMMIT_BRANCH =~ /^feature/ # pour tester
     - if: $CI_COMMIT_BRANCH == "develop"
+
+# ajouter un deploy pour la branche main
+deploy-main-job:
+  stage: deploy
+  environment: production
+  dependencies:
+    - build-job
+  script:
+    - echo "Installing applications..."
+    - apt update
+    - apt install python3-catkin-pkg python3-bloom fakeroot dpkg-dev debhelper -y
+    - catkin_prepare_release --no-push --bump major # pour le changement automatique de version : on change version majeure
+    - echo "Deploying application..."
+    - echo "yaml file:/builds/devils_balls_guest/benoit-pai-rob/bloom_config.yml" >> /etc/ros/rosdep/sources.list.d/10-local.list # vérifier le path
+    - rosdep update
+    - source /opt/ros/humble/setup.bash
+    - cd ros2_ws/
+    - source install/setup.bash
+    - cd src/benoit_pairob/
+    - rosdep update
+    - echo "Générer dossier debian"
+    - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
+    - echo "Création du deb"
+    - fakeroot debian/rules binary
+    - echo "Fichier .deb créé, envoi sur le serveur"
+    - cd ..
+    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb)" "http://172.19.48.50:8081/repository/supernana_prod/"'
+    - echo "Application successfully deployed."
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
