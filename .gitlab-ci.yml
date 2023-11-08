@@ -95,7 +95,7 @@ deploy-main-job:
     - fakeroot debian/rules binary
     - echo "Fichier .deb créé, envoi sur le serveur"
     - cd ..
-    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb)" "http://172.19.48.50:8081/repository/supernana_prod/"'
+    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb)" "http://172.19.48.50:8081/repository/supernana_preprod/"'
     - echo "Application successfully deployed."
   rules:
     - if: $CI_COMMIT_BRANCH == "main"

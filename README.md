@@ -27,7 +27,7 @@ cd prod-public-key
 
 Lancer la commande suivante :
 ```bash
-echo "deb [arch=$(dpkg --print-architecture) signed-by=./prod-public.gpg.key] http://172.19.48.50:8081/ jammy main" | sudo tee /etc/apt/sources.list.d/benoit.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=$(pwd)/preprod-public.gpg.key] http://172.19.48.50:8081/repository/supernana_preprod jammy main" | sudo tee /etc/apt/sources.list.d/benoit.list > /dev/null
 ```
 
 ### Tester la connexion au serveur

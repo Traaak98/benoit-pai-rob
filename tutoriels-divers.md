@@ -229,7 +229,7 @@ Etapes à suivre :
 * Vérifier que l'on a bien le fichier ```dev-public.gpg.key```, sinon me le demander !
 * Exécuter la commande suivante :
   ```bash
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/path-to-key/dev-public.gpg.key] http://172.19.48.50:8081/ jammy main" | sudo tee /etc/apt/sources.list.d/benoit.list > /dev/null
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/path-to-key/dev-public.gpg.key] http://172.19.48.50:8081/repository/supernana_dev jammy main" | sudo tee /etc/apt/sources.list.d/benoit.list > /dev/null
   ```
   > Note : le nom benoit.list est arbitraire !
 * Vérifier si ça marche ! Il faut être connecté à eduroam
