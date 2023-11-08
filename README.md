@@ -98,3 +98,7 @@ Ce dossier contient les multiples packages ROS2 Humble nécessaires au fonctionn
 
 Le dossier img contient toutes les images que l'on peut montrer au client, ou afficher sur le README.md.
 
+
+## Détails techniques
+
+* **masse du robot** : 13.6 kg
