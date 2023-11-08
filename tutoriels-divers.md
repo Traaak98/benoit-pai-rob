@@ -176,6 +176,7 @@ sudo dpkg -i ../nomdufichier.deb
 
 ### Désisntaller le fichier .deb
 ```
+dpkg -l | grep -i benoit
 sudo apt remove ros-humble-benoit-pairob
 ```
 
