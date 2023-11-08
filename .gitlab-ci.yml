@@ -68,7 +68,7 @@ deploy-job:      # This job runs in the deploy stage.
     - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
     - fakeroot debian/rules binary
     - cd ..
-    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb | grep custom)" "http://172.19.48.50:8081/repository/supernana_dev/"'
+    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name "*.deb" | grep custom)" "http://172.19.48.50:8081/repository/supernana_dev/"'
     # package vision_pkg
     - echo "Générer debian vision_pkg"
     - cd vision_pkg/
@@ -76,7 +76,7 @@ deploy-job:      # This job runs in the deploy stage.
     - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
     - fakeroot debian/rules binary
     - cd ..
-    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb | grep vision)" "http://172.19.48.50:8081/repository/supernana_dev/"'
+    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name "*.deb" | grep vision)" "http://172.19.48.50:8081/repository/supernana_dev/"'
     - echo "Application successfully deployed."
     # package my_robot_control
     - echo "Générer debian my_robot_control"
@@ -85,7 +85,7 @@ deploy-job:      # This job runs in the deploy stage.
     - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
     - fakeroot debian/rules binary
     - cd ..
-    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb | grep robot)" "http://172.19.48.50:8081/repository/supernana_dev/"'
+    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name "*.deb" | grep robot)" "http://172.19.48.50:8081/repository/supernana_dev/"'
     # package benoit_pairob
     - echo "Générer debian benoit_pairob"
     - cd benoit_pairob/
@@ -93,7 +93,7 @@ deploy-job:      # This job runs in the deploy stage.
     - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
     - fakeroot debian/rules binary
     - cd ..
-    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb | grep benoit)" "http://172.19.48.50:8081/repository/supernana_dev/"'
+    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name "*.deb" | grep benoit)" "http://172.19.48.50:8081/repository/supernana_dev/"'
   rules:
     - if: $CI_COMMIT_BRANCH == "develop"
 
@@ -121,7 +121,7 @@ deploy-main-job:
     - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
     - fakeroot debian/rules binary
     - cd ..
-    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb | grep custom)" "http://172.19.48.50:8081/repository/supernana_preprod/"'
+    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name "*.deb" | grep custom)" "http://172.19.48.50:8081/repository/supernana_preprod/"'
     # package vision_pkg
     - echo "Générer debian vision_pkg"
     - cd vision_pkg/
@@ -129,7 +129,7 @@ deploy-main-job:
     - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
     - fakeroot debian/rules binary
     - cd ..
-    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb | grep vision)" "http://172.19.48.50:8081/repository/supernana_preprod/"'
+    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name "*.deb" | grep vision)" "http://172.19.48.50:8081/repository/supernana_preprod/"'
     - echo "Application successfully deployed."
     # package benoit_pairob
     - echo "Générer debian benoit_pairob"
@@ -138,7 +138,7 @@ deploy-main-job:
     - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
     - fakeroot debian/rules binary
     - cd ..
-    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb | grep benoit)" "http://172.19.48.50:8081/repository/supernana_preprod/"'
+    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name "*.deb" | grep benoit)" "http://172.19.48.50:8081/repository/supernana_preprod/"'
     # package my_robot_control
     - echo "Générer debian my_robot_control"
     - cd my_robot_control/
@@ -146,6 +146,6 @@ deploy-main-job:
     - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
     - fakeroot debian/rules binary
     - cd ..
-    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb | grep robot)" "http://172.19.48.50:8081/repository/supernana_preprod/"'
+    - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name "*.deb" | grep robot)" "http://172.19.48.50:8081/repository/supernana_preprod/"'
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
