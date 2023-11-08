@@ -1,2 +1,0 @@
-[console_scripts]
-my_robot_control_node = my_robot_control.my_robot_control:main
