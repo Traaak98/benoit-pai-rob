@@ -29,32 +29,46 @@ source install/setup.bash
 
 Ouvrez 3 terminaux :
 Sur vos 3 terminaux sourcez ros2 humble et votre workspace
+
 ---
-`source /opt/ros/humble/setup.bash`
+```bash
+source /opt/ros/humble/setup.bash
+```
 ---
+
 ---
+```bash
 `source install/setup.bash`
+```
 ---
 Terminal 1 :
 Lancez la simulation
+
 ---
-`ros2 launch benoit_pairob display.launch.py`
+```bash
+ros2 launch benoit_pairob display.launch.py
+```
 ---
 
 Pour récupérer les informations de la télécommande et déplacer votre robot suivez les instructions suivantes :
 
 Terminal 2 :
+Lancez le noeud joy_node
+
+
 ---
-`Lancez le noeud joy_node`
----
----
-`ros2 run joy joy_node`
+```bash
+ros2 run joy joy_node
+```
 ---
 
 Terminal 3 :
 Lancez le noeud my_robot_control_node
+
 ---
-`ros2 run my_robot_control my_robot_control_node`
+```bash
+ros2 run my_robot_control my_robot_control_node
+```
 ---
 
 
