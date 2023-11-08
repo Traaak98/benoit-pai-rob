@@ -1,4 +1,0 @@
-source;share/tennis_court/environment/ament_prefix_path.sh
-source;share/tennis_court/environment/library_path.sh
-source;share/tennis_court/environment/path.sh
-source;share/tennis_court/environment/pythonpath.sh
