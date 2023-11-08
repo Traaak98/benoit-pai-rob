@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>tennis_court</name>
-  <version>0.0.6</version>
+  <version>0.0.7</version>
   <description>Gazebo world with a Tennis Court with spawnable tennis balls.</description>
   <maintainer email="remi.rigal@ensta-bretagne.org">Rémi Rigal</maintainer>
   <license>Apache 2.0</license>
