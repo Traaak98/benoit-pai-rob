@@ -4,6 +4,7 @@ from custom_msg.msg import ImgDetection
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 from ultralytics import YOLO
+import cv2 as cv
 
 
 class DetectBall(Node):
@@ -25,6 +26,9 @@ class DetectBall(Node):
 
         # Convert ROS image to OpenCV image
         cv_image = self.cv_bridge.imgmsg_to_cv2(msg)
+        cv_image = cv.cvtColor(cv_image, cv.COLOR_BGR2RGB)
+        cv.imshow("Image", cv_image)
+        cv.waitKey(0)
 
         # Prediction
         results = self.yolo(cv_image)

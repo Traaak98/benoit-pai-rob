@@ -9,7 +9,6 @@ setup.py
 ../../build/vision_pkg/vision_pkg.egg-info/top_level.txt
 ../../build/vision_pkg/vision_pkg.egg-info/zip-safe
 models/weights_coco128/best.pt
-models/weights_coco128/yolov8x.pt
 resource/vision_pkg
 test/test_copyright.py
 test/test_flake8.py
