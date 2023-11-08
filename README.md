@@ -63,19 +63,20 @@ sudo apt-get install ros-humble-xacro
 sudo apt-get install ros-humble-joy
 ```
 
+Ne pas oublier le package tennis_court !
 
 ### Démarrer la simulation avec ROS 2
 
-Commencez par build les packages nécessaires à la simulation :
+Commencez par build le packages **tennis_court** :
 
 ```bash
 source /opt/ros/humble/setup.bash
-cd ~/benoit-pai-rob/ros2_ws
+cd ~/ros2_ws/
 colcon build
 source install/setup.bash
 ```
 
-Sur le même terminal, lancez la simulation :
+Lancez la simulation :
 
 ```bash
 ros2 launch benoit_pairob display.launch.py
