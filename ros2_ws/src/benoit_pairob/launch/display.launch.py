@@ -49,6 +49,12 @@ def generate_launch_description():
         name='my_robot_control'
     )
 
+    vision_node = launch_ros.actions.Node(
+        package='vision_pkg',
+        executable='detect_ball',
+        name='vision'
+    )
+
     return launch.LaunchDescription([
         launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
                                             description='Absolute path to robot urdf file'),
@@ -59,6 +65,7 @@ def generate_launch_description():
         tennis_court_launch,
         spawn_entity,
         rviz_node,
+        vision_node,
         joycon_node,
         teleop_control_node
     ])
