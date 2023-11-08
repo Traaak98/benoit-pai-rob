@@ -1,5 +1,9 @@
 # Fichier créé à partir du template Gitlab
 
+# changer image docker
+default:
+  image: gondotcl/devils_balls_guest:latest
+
 stages:          # List of stages for jobs, and their order of execution
   - build
   - test
@@ -57,13 +61,13 @@ deploy-job:      # This job runs in the deploy stage.
     - source /opt/ros/humble/setup.bash
     - cd ros2_ws/
     - source install/setup.bash
+    # package benoit-pairob
+    - echo "Générer debian benoit_pairob"
     - cd src/benoit_pairob/
     - rosdep update
-    - echo "Générer dossier debian"
     - bloom-generate rosdebian --ros-distro humble --os-name ubuntu --os-version jammy -d
-    - echo "Création du deb"
     - fakeroot debian/rules binary
-    - echo "Fichier .deb créé, envoi sur le serveur"
+    # envoi sur le serveur
     - cd ..
     - 'curl -u "$ID_CURL:$PSSWRD" -H "Content-Type:multipart/form-data" --data-binary "@$(find . -name *.deb)" "http://172.19.48.50:8081/repository/supernana_dev/"'
     - echo "Application successfully deployed."
