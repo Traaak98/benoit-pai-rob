@@ -1,7 +1,35 @@
 # Tennis Ball Collector
 
-Ceci est un template de dépôt Git pour le cours d'ingénierie système et modélisation robotique à l'ENSTA Bretagne en 2023.
+Ceci est le dépôt contenant les sources du projet Tennis Ball Collector, réalisé par le groupe Benoit Pairob dans le cadre du projet d'Ingénierie Système de 3ème année à l'ENSTA Bretagne.
 
+L'application a été réalisée sous [ROS Humble](https://docs.ros.org/en/humble/index.html) (Ubuntu 22.04).
+
+## Récupérer les sources avec apt
+
+### Télécharger la clé GPG 
+La clé d'accès au serveur avec notre package est téléchargeable avec la commande suivante :
+```bash
+git clone https://gitlab.ensta-bretagne.fr/devils_balls_guest/prod-public-key.git
+```
+
+### Ajouter la clé GPG au trousseau
+Se placer dans le git :
+```bash
+cd prod-public-key
+```
+
+Lancer la commande suivante :
+```bash
+echo "deb [arch=$(dpkg --print-architecture) signed-by=./prod-public.gpg.key] http://172.19.48.50:8081/ jammy main" | sudo tee /etc/apt/sources.list.d/benoit.list > /dev/null
+```
+
+### Tester la connexion au serveur
+Vérifier si on peut télécharger le package :
+```bash
+sudo apt update 
+sudo apt install ros-humble-benoit-pairob
+```
+Vous pouvez ensuite passer à la partie suivante pour tester si l'application fonctionne.
 
 ## Lancer la simulation
 
