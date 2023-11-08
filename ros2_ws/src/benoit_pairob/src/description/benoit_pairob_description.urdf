@@ -47,8 +47,8 @@
       <geometry>
       <box size="${base_length} ${base_width} ${base_height}"/>
       </geometry>
-      <material name="Cyan">
-      <color rgba="0 1.0 1.0 1.0"/>
+      <material name="Pink">
+      	<color rgba="0.88 0.24 0.58 1.0"/>
       </material>
     </visual>
     <collision>
@@ -59,6 +59,11 @@
 
     <xacro:box_inertia m="10" w="${base_width}" d="${base_length}" h="${base_height}"/>
   </link>
+  
+  <gazebo reference="base_link">
+    <material>Gazebo/PurpleGlow
+    </material>
+  </gazebo>
 
   <!-- Robot Footprint -->
   <link name="base_footprint"/>
@@ -75,8 +80,8 @@
       <geometry>
         <box size="0.02 ${base_width} ${front_height}"/>
       </geometry>
-      <material name="Gray">
-        <color rgba="0.5 0.5 0.5 1.0"/>
+      <material name="Pink">
+        <color rgba="0.88 0.24 0.58 1.0"/>
       </material>
     </visual>
     <collision>
@@ -101,8 +106,8 @@
       <geometry>
         <box size="0.02 ${front_side_length} ${front_height}"/>
       </geometry>
-      <material name="Gray">
-        <color rgba="0.5 0.5 0.5 1.0"/>
+      <material name="Pink">
+        <color rgba="0.88 0.24 0.58 1.0"/>
       </material>
     </visual>
     <collision>
@@ -128,8 +133,8 @@
       <geometry>
         <box size="0.02 ${front_side_length} ${front_height}"/>
       </geometry>
-      <material name="Gray">
-        <color rgba="0.5 0.5 0.5 1.0"/>
+      <material name="Pink">
+        <color rgba="0.88 0.24 0.58 1.0"/>
       </material>
     </visual>
     <collision>
@@ -156,8 +161,8 @@
         <geometry>
             <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
         </geometry>
-        <material name="Gray">
-          <color rgba="0.5 0.5 0.5 1.0"/>
+        <material name="Pink">
+        <color rgba="0.88 0.24 0.58 1.0"/>
         </material>
       </visual>
 
@@ -188,8 +193,8 @@
       <geometry>
         <sphere radius="${(wheel_radius+wheel_zoff-(base_height/2))}"/>
       </geometry>
-      <material name="Cyan">
-        <color rgba="0 1.0 1.0 1.0"/>
+      <material name="Pink">
+        <color rgba="0.88 0.24 0.58 1.0"/>
       </material>
     </visual>
     <collision>
@@ -209,7 +214,6 @@
   </joint>
 
   <gazebo reference="front_caster">
-    <material>Gazebo/Black</material>
     <mu1 value="0.001"/>
     <mu2 value="0.001"/>
   </gazebo>
