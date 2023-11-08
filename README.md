@@ -31,9 +31,9 @@ sudo apt install ros-humble-benoit-pairob
 ```
 Vous pouvez ensuite passer à la partie suivante pour tester si l'application fonctionne.
 
-## Lancer la simulation
+## Dépendences
 
-### Dépendences
+### Vue générale
 
 * **joint_state_publisher**: Un package permettant de publier l'état des joints d'un robot pour la visualisation et la simulation.
 
@@ -44,6 +44,21 @@ Vous pouvez ensuite passer à la partie suivante pour tester si l'application fo
 * **rviz**: Un outil de visualisation 3D interactif pour la visualisation en temps réel de données robotiques, telles que des capteurs, des cartes et des modèles robotiques.
 
 * **xacro**: Un outil permettant de simplifier la création et la gestion des descriptions de robots URDF en utilisant une syntaxe XML simplifiée et extensible.
+
+### Télécharger les dépendences
+Commencez par sourcer ROS2 Humble
+```bash
+source /opt/ros/humble/setup.bash
+```
+
+Ensuite vous pouvez télécharger les dépendances avec ces commandes :
+```bash
+sudo apt-get install ros-humble-joint-state-publisher
+sudo apt-get install ros-humble-robot-state-publisher
+sudo apt-get install ros-humble-rviz2
+sudo apt-get install ros-humble-xacro
+sudo apt-get install ros-humble-joy
+```
 
 
 ### Démarrer la simulation
