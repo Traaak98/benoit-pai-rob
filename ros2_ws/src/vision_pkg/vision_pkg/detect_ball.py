@@ -29,8 +29,6 @@ class DetectBall(Node):
         # Convert ROS image to OpenCV image
         cv_image = self.cv_bridge.imgmsg_to_cv2(msg)
         cv_image = cv.cvtColor(cv_image, cv.COLOR_BGR2RGB)
-        #cv.imshow("Image", cv_image)
-        #cv.waitKey(0)
 
         # Prediction
         results = self.yolo(cv_image)
@@ -48,10 +46,11 @@ class DetectBall(Node):
                 data_detect.coordy.append(y)
                 name = self.yolo.names[int(box.cls)]
                 data_detect.names.append(name)
+                cv.rectangle(cv_image, (int(x - w/2), int(y + h/2)), (int(x + w/2), int(y - h/2)), (0, 255, 0), 2)
         print("Publish")
         print(data_detect)
         self.publisher.publish(data_detect)
-        cv.rectangle(cv_image, (int(x - w/2), int(y + h/2)), (int(x + w/2), int(y - h/2)), (0, 255, 0), 2)
+
         image_msg = self.cv_bridge.cv2_to_imgmsg(cv_image)
         self.image_publisher.publish(image_msg)
 
