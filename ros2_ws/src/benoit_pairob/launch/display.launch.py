@@ -43,11 +43,6 @@ def generate_launch_description():
         executable='joy_node',
         name='joy_node'
     )
-    teleop_control_node = launch_ros.actions.Node(
-        package='my_robot_control',
-        executable='my_robot_control_node',
-        name='my_robot_control'
-    )
     nodePilotage = launch_ros.actions.Node(
         package='benoit_pairob',
         namespace='benoit_pairob',
@@ -69,6 +64,5 @@ def generate_launch_description():
 
         #rviz_node,
         joycon_node,
-        teleop_control_node,
         nodePilotage
     ])

@@ -10,6 +10,7 @@ PilotageNode::~PilotageNode() {}
 
 void PilotageNode::init_interfaces(){
     publisher_command_ = this->create_publisher<geometry_msgs::msg::Twist>("/demo/cmd_vel", 10);
+    subscriber_joy_ = this->create_subscription<sensor_msgs::msg::Joy>("/joy", 10, std::bind(&PilotageNode::set_target_teleop, this, std::placeholders::_1));
     subscriber_heading_ = this->create_subscription<sensor_msgs::msg::Imu>("/demo/imu", 10, std::bind(&PilotageNode::set_x, this, std::placeholders::_1));
     subscriber_target_ = this->create_subscription<geometry_msgs::msg::PoseStamped>("/target_position", 10, std::bind(&PilotageNode::set_target, this, std::placeholders::_1));
 }
@@ -20,6 +21,7 @@ void PilotageNode::init_parameters() {
     target_ << 0, 0;
     k = 0.5;
     u1_ = 0;
+    teleop = true;
 }
 
 void PilotageNode::set_x(sensor_msgs::msg::Imu pose) {
@@ -35,14 +37,31 @@ void PilotageNode::set_target(geometry_msgs::msg::PoseStamped pose) {
     target_ << x, y;
 }
 
+void PilotageNode::set_target_teleop(sensor_msgs::msg::Joy joy) {
+    double x = joy.axes[3];
+    double y = joy.axes[2];
+    target_teleop << x, y;
+}
+
 void PilotageNode::timer_callback(){
     auto message = geometry_msgs::msg::Twist();
-    
-    control();
 
-    message.linear.x = 0;
-    message.linear.y = 0.;
-    message.angular.z = u1_;
+    if (teleop)
+    {
+        message.linear.x = target_teleop(0);
+        if (target_teleop(0) < 0)
+        {
+            message.angular.z = -target_teleop(1);
+        } else {
+            message.angular.z = target_teleop(1);
+        }
+    } else {
+        control();
+
+        message.linear.x = 0;
+        message.linear.y = 0.;
+        message.angular.z = u1_;
+    }
 
     publisher_command_->publish(message);
 }
