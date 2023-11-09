@@ -11,8 +11,9 @@ PilotageNode::~PilotageNode() {}
 void PilotageNode::init_interfaces(){
     publisher_command_ = this->create_publisher<geometry_msgs::msg::Twist>("/demo/cmd_vel", 10);
     subscriber_joy_ = this->create_subscription<sensor_msgs::msg::Joy>("/joy", 10, std::bind(&PilotageNode::set_target_teleop, this, std::placeholders::_1));
-    subscriber_heading_ = this->create_subscription<sensor_msgs::msg::Imu>("/demo/imu", 10, std::bind(&PilotageNode::set_x, this, std::placeholders::_1));
+    subscriber_heading_ = this->create_subscription<sensor_msgs::msg::Imu>("/demo/imu", 10, std::bind(&PilotageNode::set_theta, this, std::placeholders::_1));
     subscriber_target_ = this->create_subscription<geometry_msgs::msg::PoseStamped>("/xy_closest_ball", 10, std::bind(&PilotageNode::set_target, this, std::placeholders::_1));
+    subscriber_position_ = this->create_subscription<geometry_msgs::msg::PoseStamped>("/xy_robot", 10, std::bind(&PilotageNode::set_x, this, std::placeholders::_1));
 }
 
 void PilotageNode::init_parameters() {
@@ -21,15 +22,20 @@ void PilotageNode::init_parameters() {
     target_ << 0, 0;
     k = 0.5;
     u1_ = 0;
+    u2_ = 0;
     teleop = false;
     button_pressed = false;
 }
 
-void PilotageNode::set_x(sensor_msgs::msg::Imu pose) {
-    double x = 0;
-    double y = 0;
+void PilotageNode::set_theta(sensor_msgs::msg::Imu pose) {
     double theta = tf2::getYaw(pose.orientation);
-    x_ << x, y, theta;
+    x_ << x_(0), x_(1), theta;
+}
+
+void PilotageNode::set_x(geometry_msgs::msg::PoseStamped pose) {
+    double x = pose.pose.position.x;
+    double y = pose.pose.position.y;
+    x_ << x, y, x_(2);
 }
 
 void PilotageNode::set_target(geometry_msgs::msg::PoseStamped pose) {
@@ -67,8 +73,7 @@ void PilotageNode::timer_callback(){
     } else {
         control();
 
-        message.linear.x = 0;
-        message.linear.y = 0.;
+        message.linear.x = u2_;
         message.angular.z = u1_;
     }
 
@@ -76,8 +81,9 @@ void PilotageNode::timer_callback(){
 }
 
 void PilotageNode::control() {
-    //double e = atan2(target_(1)-x_(1), target_(0)-x_(0))-x_(2);
-    double e = target_(0) - x_(2);
+    RCLCPP_INFO(this->get_logger(), "x = %f, y = %f, theta = %f", x_(0), x_(1), x_(2));
+    RCLCPP_INFO(this->get_logger(), "target_x = %f, target_y = %f", target_(0), target_(1));
+    double e = atan2(target_(1)-x_(1), target_(0)-x_(0))-x_(2);
     e = 2*atan(tan(e/2));
 
     if (e > M_PI/4)
@@ -89,6 +95,16 @@ void PilotageNode::control() {
     } else {
         u1_ = k*e;
     }
+
+    if (e<=0.05 && e>=-0.05)
+    {
+        u1_ = 0;
+        u2_ = 1;
+    } else {
+        u2_ = 0;
+    }
+
+    RCLCPP_INFO(this->get_logger(), "e = %f", e);
 }
 
 /****************************************

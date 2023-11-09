@@ -22,7 +22,8 @@ class PilotageNode : public rclcpp::Node {
         void init_interfaces();
         void init_parameters();
         void timer_callback();
-        void set_x(sensor_msgs::msg::Imu pose);
+        void set_theta(sensor_msgs::msg::Imu pose);
+        void set_x(geometry_msgs::msg::PoseStamped pose);
         void set_target(geometry_msgs::msg::PoseStamped pose);
         void set_target_teleop(sensor_msgs::msg::Joy joy);
         void control();
@@ -32,12 +33,14 @@ class PilotageNode : public rclcpp::Node {
         Matrix<double, 2, 1> target_teleop;
         double k;
         double u1_;
+        double u2_;
         bool teleop;
         bool button_pressed;
         std::chrono::milliseconds loop_dt_;
         rclcpp::TimerBase::SharedPtr timer_; // objet timer
         rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr subscriber_joy_; // objet subscriber
         rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr subscriber_heading_; // objet subscriber
+        rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr subscriber_position_; // objet subscriber
         rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr subscriber_target_; // objet subscriber
         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher_command_; // objet publisher
 };
