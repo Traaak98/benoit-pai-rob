@@ -13,29 +13,37 @@ Le projet consiste à réaliser un robot capable de collecter des balles de tenn
 
 ## Récupérer les sources avec apt
 
-### Télécharger la clé GPG 
+### Télécharger la clé GPG
+
 La clé d'accès au serveur avec notre package est téléchargeable avec la commande suivante :
+
 ```bash
 git clone https://gitlab.ensta-bretagne.fr/devils_balls_guest/prod-public-key.git
 ```
 
 ### Ajouter la clé GPG au trousseau
+
 Se placer dans le git :
+
 ```bash
 cd prod-public-key
 ```
 
 Lancer la commande suivante :
+
 ```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=$(pwd)/preprod-public.gpg.key] http://172.19.48.50:8081/repository/supernana_preprod jammy main" | sudo tee /etc/apt/sources.list.d/benoit.list > /dev/null
 ```
 
 ### Tester la connexion au serveur
+
 Vérifier si on peut télécharger le package :
+
 ```bash
 sudo apt update 
 sudo apt install ros-humble-benoit-pairob
 ```
+
 Vous pouvez ensuite passer à la partie suivante pour tester si l'application fonctionne.
 
 ## Dépendences
@@ -49,12 +57,15 @@ Vous pouvez ensuite passer à la partie suivante pour tester si l'application fo
 - **xacro**: Un outil permettant de simplifier la création et la gestion des descriptions de robots URDF en utilisant une syntaxe XML simplifiée et extensible.
 
 ### Télécharger les dépendences
-Commencez par sourcer ROS2 Humble
+
+Commencez par sourcer ROS2 Humble:
+
 ```bash
 source /opt/ros/humble/setup.bash
 ```
 
 Ensuite vous pouvez télécharger les dépendances avec ces commandes :
+
 ```bash
 sudo apt-get install ros-humble-joint-state-publisher
 sudo apt-get install ros-humble-robot-state-publisher
@@ -129,7 +140,9 @@ Ce dossier contient les multiples packages ROS2 Humble nécessaires au fonctionn
 
 Le dossier img contient toutes les images que l'on peut montrer au client, ou afficher sur le README.md.
 
-
 ## Détails techniques
 
-* **masse du robot** : 13.6 kg
+- **masse du robot** : 13.6 kg
+- **Dimension** : 0.75m x 0.53m x 0.3m
+- **Vitesse max** : 1 m/s
+- **Coloris** : Rose pastel et gris
