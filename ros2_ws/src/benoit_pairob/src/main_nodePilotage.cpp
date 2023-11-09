@@ -21,7 +21,8 @@ void PilotageNode::init_parameters() {
     target_ << 0, 0;
     k = 0.5;
     u1_ = 0;
-    teleop = true;
+    teleop = false;
+    button_pressed = false;
 }
 
 void PilotageNode::set_x(sensor_msgs::msg::Imu pose) {
@@ -40,6 +41,14 @@ void PilotageNode::set_target(geometry_msgs::msg::PoseStamped pose) {
 void PilotageNode::set_target_teleop(sensor_msgs::msg::Joy joy) {
     double x = joy.axes[3];
     double y = joy.axes[2];
+    if (joy.buttons[0] == 1 && !button_pressed)
+    {
+        teleop = !teleop;
+        button_pressed = true;
+    } else if (joy.buttons[0] == 0 && button_pressed)
+    {
+        button_pressed = false;
+    }
     target_teleop << x, y;
 }
 
