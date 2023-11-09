@@ -49,11 +49,20 @@ def generate_launch_description():
         executable='nodePilotage',
         name='nodePilotage'
     )
-    
-    vision_node = launch_ros.actions.Node(
+    nodeDetectBall = launch_ros.actions.Node(
         package='vision_pkg',
         executable='detect_ball',
         name='detect_ball'
+    )
+    nodeDetectRobot = launch_ros.actions.Node(
+        package='vision_pkg',
+        executable='detect_robot',
+        name='detect_robot'
+    )
+    nodeChooseClosest = launch_ros.actions.Node(
+        package='vision_pkg',
+        executable='choose_closest',
+        name='choose_closest'
     )
 
     return launch.LaunchDescription([
@@ -66,7 +75,9 @@ def generate_launch_description():
         robot_state_publisher_node,
         launch.actions.DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
                                             description='Absolute path to rviz config file'),
-        vision_node,
+        nodeDetectBall,
+        nodeDetectRobot,
+        nodeChooseClosest,
         #rviz_node,
         joycon_node,
         nodePilotage

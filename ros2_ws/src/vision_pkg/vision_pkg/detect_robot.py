@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from custom_msg.msg import ImgDetection
+from geometry_msgs.msg import PoseStamped
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 import cv2
@@ -16,7 +16,7 @@ class DetectRobot(Node):
 
         self.subscription = self.create_subscription(Image, '/zenith_camera/image_raw', self.camera_callback, 10)
         self.image_publisher = self.create_publisher(Image, '/image_detection_robot', 10)
-        self.XY_publisher = self.create_publisher(ImgDetection, '/xy_robot',10)
+        self.XY_publisher = self.create_publisher(PoseStamped, '/xy_robot',10)
 
 
     def detect_rose(self,imgBGR):
@@ -38,9 +38,7 @@ class DetectRobot(Node):
 
 
     def camera_callback(self, msg):
-        msgtopublish = ImgDetection()
-        Lx = []
-        Ly = []
+        msgtopublish = PoseStamped()
         cv_image = self.cv_bridge.imgmsg_to_cv2(msg)
         imgbin = self.detect_rose(cv_image)
 
@@ -57,20 +55,18 @@ class DetectRobot(Node):
                 M = cv2.moments(contour)
                 #print("moment : " + str(M["m00"]))
                 if M["m00"] != 0:
-                    cx = int(M["m10"] / M["m00"])
-                    cy = int(M["m01"] / M["m00"])
-                    Lx.append(cx)
-                    Ly.append(cy)
-                    msgtopublish.coordx = Lx
-                    msgtopublish.coordy = Ly
+                    cx = float(M["m10"] / M["m00"])
+                    cy = float(M["m01"] / M["m00"])
+                    msgtopublish.pose.position.x = cx
+                    msgtopublish.pose.position.y = cy
                     self.XY_publisher.publish(msgtopublish)
                 else:
                     print("Le moment est trop faible")
         else:
             print("je ne detecte pas de contour")
         print("--- Robot ---")
-        print("Lx :" + str(Lx))
-        print("Ly :" + str(Ly))
+        print("Lx :" + str(cx))
+        print("Ly :" + str(cy))
 
 
     def camera_callback_visu(self, msg):

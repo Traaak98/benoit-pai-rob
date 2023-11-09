@@ -65,6 +65,7 @@ class DetectBall(Node):
                     Ly.append(cy)
                     msgtopublish.coordx = Lx
                     msgtopublish.coordy = Ly
+                    #cv2.rectangle(imgbin, (cx - 5, cy - 5), (cx + 5, cy + 5), (255, 0, 0), 2)
                     self.XY_publisher.publish(msgtopublish)
                 else:
                     print("Le moment ball est trop faible")
