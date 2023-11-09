@@ -48,7 +48,7 @@ class DetectBall(Node):
 
         image_msg = self.cv_bridge.cv2_to_imgmsg(imgbin)
         self.image_publisher.publish(image_msg)
-        self.XY_publisher.publish(msgtopublish)
+
 
         contours, hierarchy = cv2.findContours(imgbin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         #print("contours :" + str(contours))
@@ -65,7 +65,7 @@ class DetectBall(Node):
                     Ly.append(cy)
                     msgtopublish.coordx = Lx
                     msgtopublish.coordy = Ly
-
+                    self.XY_publisher.publish(msgtopublish)
                 else:
                     print("Le moment ball est trop faible")
         else:

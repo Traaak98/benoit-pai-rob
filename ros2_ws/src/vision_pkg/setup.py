@@ -23,8 +23,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'detect_ball = vision_pkg.detect_ball:main',
-            'detect_robot = vision_pkg.detect_robot:main',
+            'detect_ball    = vision_pkg.detect_ball:main',
+            'detect_robot   = vision_pkg.detect_robot:main',
+            'choose_closest = vision_pkg.choose_closest:main',
         ],
     },
 )
