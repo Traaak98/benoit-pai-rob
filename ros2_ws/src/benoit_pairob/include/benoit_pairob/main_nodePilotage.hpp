@@ -33,6 +33,7 @@ class PilotageNode : public rclcpp::Node {
         double k;
         double u1_;
         bool teleop;
+        bool button_pressed;
         std::chrono::milliseconds loop_dt_;
         rclcpp::TimerBase::SharedPtr timer_; // objet timer
         rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr subscriber_joy_; // objet subscriber
