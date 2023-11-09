@@ -12,7 +12,7 @@ void PilotageNode::init_interfaces(){
     publisher_command_ = this->create_publisher<geometry_msgs::msg::Twist>("/demo/cmd_vel", 10);
     subscriber_joy_ = this->create_subscription<sensor_msgs::msg::Joy>("/joy", 10, std::bind(&PilotageNode::set_target_teleop, this, std::placeholders::_1));
     subscriber_heading_ = this->create_subscription<sensor_msgs::msg::Imu>("/demo/imu", 10, std::bind(&PilotageNode::set_x, this, std::placeholders::_1));
-    subscriber_target_ = this->create_subscription<geometry_msgs::msg::PoseStamped>("/target_position", 10, std::bind(&PilotageNode::set_target, this, std::placeholders::_1));
+    subscriber_target_ = this->create_subscription<geometry_msgs::msg::PoseStamped>("/xy_closest_ball", 10, std::bind(&PilotageNode::set_target, this, std::placeholders::_1));
 }
 
 void PilotageNode::init_parameters() {
