@@ -7,9 +7,34 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+
+# nodePilotage
+add_executable(nodePilotage src/main_nodePilotage.cpp)
+
+ament_target_dependencies(nodePilotage
+ rclcpp
+ tf2
+ geometry_msgs
+ tf2_geometry_msgs
+ sensor_msgs
+)
+
+target_link_libraries(nodePilotage "${cpp_typesupport_target}")
+target_include_directories(nodePilotage PUBLIC
+$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+$<INSTALL_INTERFACE:include>)
+
+install(TARGETS nodePilotage
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 install(
   DIRECTORY src launch rviz

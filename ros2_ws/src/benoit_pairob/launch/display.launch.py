@@ -43,19 +43,18 @@ def generate_launch_description():
         executable='joy_node',
         name='joy_node'
     )
-    teleop_control_node = launch_ros.actions.Node(
-        package='my_robot_control',
-        executable='my_robot_control_node',
-        name='my_robot_control'
+    nodePilotage = launch_ros.actions.Node(
+        package='benoit_pairob',
+        namespace='benoit_pairob',
+        executable='nodePilotage',
+        name='nodePilotage'
     )
-
+    
     vision_node = launch_ros.actions.Node(
         package='vision_pkg',
         executable='detect_ball',
         name='detect_ball'
     )
-
-    
 
     return launch.LaunchDescription([
         spawn_entity,
@@ -68,7 +67,7 @@ def generate_launch_description():
         launch.actions.DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
                                             description='Absolute path to rviz config file'),
         vision_node,
-        rviz_node,
+        #rviz_node,
         joycon_node,
-        teleop_control_node
+        nodePilotage
     ])
