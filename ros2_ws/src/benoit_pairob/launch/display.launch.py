@@ -48,6 +48,13 @@ def generate_launch_description():
         executable='my_robot_control_node',
         name='my_robot_control'
     )
+
+    vision_node = launch_ros.actions.Node(
+        package='vision_pkg',
+        executable='detect_ball',
+        name='detect_ball'
+    )
+
     
 
     return launch.LaunchDescription([
@@ -60,7 +67,7 @@ def generate_launch_description():
         robot_state_publisher_node,
         launch.actions.DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
                                             description='Absolute path to rviz config file'),
-
+        vision_node,
         rviz_node,
         joycon_node,
         teleop_control_node

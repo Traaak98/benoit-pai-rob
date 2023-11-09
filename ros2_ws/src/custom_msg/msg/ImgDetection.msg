@@ -1,4 +1,4 @@
 bool detect
 string[] names
-float64[] coordx
-float64[] coordy
+int64[] coordx
+int64[] coordy
