@@ -87,9 +87,8 @@ void PilotageNode::control() {
     // RCLCPP_INFO(this->get_logger(), "x = %f, y = %f, theta = %f", x_(0), x_(1), x_(2));
     // RCLCPP_INFO(this->get_logger(), "target_x = %f, target_y = %f", target_(0), target_(1));
     // RCLCPP_INFO(this->get_logger(), "e = %f", e);
-    
+
     e = 2*atan(tan(e/2));
-    RCLCPP_INFO(this->get_logger(), "e = %f", e);
 
     if (e > M_PI/4)
     {
@@ -100,6 +99,7 @@ void PilotageNode::control() {
     } else {
         u1_ = k*e;
     }
+
     if (e<=0.05 && e>=-0.05)
     {
         u1_ = 0;
@@ -108,7 +108,9 @@ void PilotageNode::control() {
         u2_ = 0;
     }
 
+    RCLCPP_INFO(this->get_logger(), "e = %f", e);
 }
+
 
 void PilotageNode::planning() {
 
