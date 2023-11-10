@@ -27,9 +27,12 @@ class PilotageNode : public rclcpp::Node {
         void set_target(geometry_msgs::msg::PoseStamped pose);
         void set_target_teleop(sensor_msgs::msg::Joy joy);
         void control();
+        void planning();
+
     private:
         Matrix<double, 3, 1> x_;
         Matrix<double, 2, 1> target_;
+        Matrix<double, 2, 1> target_planned;
         Matrix<double, 2, 1> target_teleop;
         double k;
 
@@ -56,12 +59,12 @@ class PilotageNode : public rclcpp::Node {
         float coef_x = img_w/27.8;
         float coef_y = img_h/15.6;
 
-        double filet_1[2] = {(double) img_w/2, img_h - 2.2*coef_y};
-        double filet_2[2] = {(double) img_w/2, 2.2*coef_y};
-        double zone_A[2] = {img_w - 1.5*coef_x, img_h - 1.5*coef_y};
-        double zone_B[2] = {img_w - 1.5*coef_x, 3*coef_y};
-        double zone_C[2] = {img_w - 3*coef_x, 1.5*coef_y};
-        double zone_D[2] = {1.5*coef_x, 1.5*coef_y};
-        double zone_E[2] = {1.5*coef_x, img_h - 3*coef_y};
-        double zone_F[2] = {3*coef_x, img_h - 1.5*coef_y};
+        double filet_1[2] = {(double) img_w/2, 2.2*coef_y};
+        double filet_2[2] = {(double) img_w/2, img_h - 2.2*coef_y};
+        double zone_A[2] = {img_w - 1.5*coef_x, 1.5*coef_y};
+        double zone_B[2] = {img_w - 1.5*coef_x, img_h - 3*coef_y};
+        double zone_C[2] = {img_w - 3*coef_x, img_h - 1.5*coef_y};
+        double zone_D[2] = {1.5*coef_x, img_h - 1.5*coef_y};
+        double zone_E[2] = {1.5*coef_x, 3*coef_y};
+        double zone_F[2] = {3*coef_x, 1.5*coef_y};
 };
