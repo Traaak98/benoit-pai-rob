@@ -138,6 +138,46 @@ void PilotageNode::ball_on_the_same_side() {
     else ball_same_side_ = true;
 }
 
+void PilotageNode::change_side() {
+    if (not(ball_same_side_) && x_(0) < img_w/2)  {
+        // CHANGER DE COTE --> regarder en haut ou en bas puis passage
+        
+        if (target_(1) > img_h/2) {
+            // regarder en bas
+            // on regarde si on est déjà proche du filet
+            norm = std::sqrt(std::pow(filet_1_left[0] - x_(0), 2) + std::pow(filet_1_left[1] - x_(1), 2));
+
+            if (norm > 10) target_planned << filet_1_left[0], filet_1_left[1]; // si on est loin du filet on va vers le filet
+            else target_planned << filet_1_right[0], filet_1_right[1]; // sinon on le dépasse
+        }
+        else {
+            // regarder en haut
+            // on regarde si on est déjà proche du filet
+            norm = std::sqrt(std::pow(filet_2_left[0] - x_(0), 2) + std::pow(filet_2_left[1] - x_(1), 2));
+
+            if (norm > 10) target_planned << filet_2_left[0], filet_2_left[1];
+            else target_planned << filet_2_right[0], filet_2_right[1];
+        }
+    }
+    else if (not(ball_same_side_) && x_(0) > img_w/2) {
+        // CHANGER DE COTE --> regarder en haut ou en bas
+        if (target_(1) > img_h/2) {
+            // regarder en bas
+            // on regarde si on est déjà proche du filet
+            norm = std::sqrt(std::pow(filet_1_right[0] - x_(0), 2) + std::pow(filet_1_right[1] - x_(1), 2));
+            if (norm > 10) target_planned << filet_1_right[0], filet_1_right[1];
+            else target_planned << filet_1_left[0], filet_1_left[1];
+        }
+        else {
+            // regarder en haut
+            // on regarde si on est déjà proche du filet
+            norm = std::sqrt(std::pow(filet_2_right[0] - x_(0), 2) + std::pow(filet_2_right[1] - x_(1), 2));
+            if (norm > 10) target_planned << filet_2_right[0], filet_2_right[1]; // si on est loin du filet on va vers le filet
+            else target_planed << filet_2_left[0], filet_2_left[1]; // sinon on le dépasse
+            
+        }
+    }
+}
 
 void PilotageNode::planning() {
 

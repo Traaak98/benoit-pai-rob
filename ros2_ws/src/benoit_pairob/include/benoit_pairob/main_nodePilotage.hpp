@@ -72,4 +72,8 @@ class PilotageNode : public rclcpp::Node {
         double zone_D[2] = {1.5*coef_x, img_h - 1.5*coef_y};
         double zone_E[2] = {1.5*coef_x, 3*coef_y};
         double zone_F[2] = {3*coef_x, 1.5*coef_y};
+        double filet_1_left[2] = {filet_1[0] - 0.5*coef_x, filet_1[1] - 0.5*coef_y};
+        double filet_1_right[2] = {filet_1[0] + 0.5*coef_x, filet_1[1] - 0.5*coef_y};
+        double filet_2_left[2] = {filet_2[0] - 0.5*coef_x, filet_2[1] + 0.5*coef_y};
+        double filet_2_right[2] = {filet_2[0] + 0.5*coef_x, filet_2[1] + 0.5*coef_y};
 };
