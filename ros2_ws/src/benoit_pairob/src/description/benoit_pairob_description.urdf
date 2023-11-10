@@ -46,7 +46,7 @@
     <visual>
       <origin xyz="0.0 0.0 -0.15" rpy="${pi/2} 0.0  0.0"/>
       <geometry>
-        <mesh filename="file://$(find benoit_pairob)/src/description/meshes/ChassisVrai.obj"/>
+        <mesh filename="file://$(find benoit_pairob)/src/description/meshes/Chassis.obj"/>
       </geometry>
       <material name="Pink">
       	<color rgba="0.88 0.24 0.58 1.0"/>
@@ -55,7 +55,7 @@
     <collision>
       <origin xyz="0.0 0.0 -0.15" rpy="${pi/2} 0.0  0.0"/>
       <geometry>
-        <mesh filename="file://$(find benoit_pairob)/src/description/meshes/ChassisVrai.obj"/>
+        <mesh filename="file://$(find benoit_pairob)/src/description/meshes/Chassis.obj"/>
       </geometry>
     </collision>
 

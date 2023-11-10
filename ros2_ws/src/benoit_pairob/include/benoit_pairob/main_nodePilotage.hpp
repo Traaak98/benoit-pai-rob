@@ -28,9 +28,11 @@ class PilotageNode : public rclcpp::Node {
         void set_target_teleop(sensor_msgs::msg::Joy joy);
         void control();
         void planning();
+        void ball_on_the_same_side();
 
     private:
         Matrix<double, 3, 1> x_;
+        Matrix<double, 3, 1> x_camera;
         Matrix<double, 2, 1> target_;
         Matrix<double, 2, 1> target_planned;
         Matrix<double, 2, 1> target_teleop;
@@ -38,7 +40,9 @@ class PilotageNode : public rclcpp::Node {
 
         double u1_;
         double u2_;
+        double norm;
         double v_;  // vitesse d'avance
+        bool ball_same_side_;
 
         bool teleop;
         bool button_pressed;
@@ -52,12 +56,13 @@ class PilotageNode : public rclcpp::Node {
 
         // index de la FSM
         int fsm_;
+        bool avance_;
 
         // coordonnées du terrain et autres constantes
-        int img_w = 1280;
-        int img_h = 720;
-        float coef_x = img_w/27.8;
-        float coef_y = img_h/15.6;
+        double img_w = 1280;
+        double img_h = 720;
+        double coef_x = img_w/27.8;
+        double coef_y = img_h/15.6;
 
         double filet_1[2] = {(double) img_w/2, 2.2*coef_y};
         double filet_2[2] = {(double) img_w/2, img_h - 2.2*coef_y};
