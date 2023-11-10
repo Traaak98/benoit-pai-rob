@@ -80,17 +80,17 @@ void PilotageNode::timer_callback(){
 void PilotageNode::control() {
     double e = std::atan2(target_(1), target_(0)) - x_(2);
     bool ball_presence = target_(0) != 0 || target_(1) != 0;
-    // ball_presence *=
     RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "bool : %d", ball_presence);
     bool clara_func = false; // pour l'instant on y va pas
 
+    // pour l'instant on ne change pas de côté
     if (target_(0) > img_w/2 && x_(0) < img_w/2)  {
         // CHANGER DE COTE --> regarder en haut ou en bas puis passage
-        clara_func = false;
+        ball_presence = false;
     }
     else if (target_(0) < img_w/2 && x_(0) > img_w/2) {
         // CHANGER DE COTE --> regarder en haut ou en bas
-        clara_func = false;
+        ball_presence = false;
     }
 
     // if ((target_(0) > zone_E[0] && target_(0) < filet_1[0] - 1.5*coef_x && target_(1) < zone_F[1] && target_(1) > zone_D[1])
