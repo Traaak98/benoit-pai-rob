@@ -125,6 +125,10 @@ void PilotageNode::planning() {
     }
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "ball presence : %d", ball_presence);
 
+    Matrix<double, 2, 1> target_planned_r;
+    Matrix<double, 2, 2> R{{cos(x_(2)), -sin(x_(2))}, {sin(x_(2)), cos(x_(2))}};
+    double norm = 100;
+
     bool condition_mur = (target_(0) > zone_E[0] && target_(0) < filet_1[0] - 1.5*coef_x && target_(1) < zone_F[1] && target_(1) > zone_D[1])
                          || (target_(0) > filet_1[0] + 1.5*coef_x && target_(0) < zone_A[0] && target_(1) < zone_F[1] && target_(1) > zone_D[1]);
     if (fsm_ == 0 && ball_presence) {
@@ -138,18 +142,16 @@ void PilotageNode::planning() {
     }
 
     if (fsm_ == 1) {
-        Matrix<double, 2, 1> target_planned_r;
-        Matrix<double, 2, 2> R{{cos(x_(2)), -sin(x_(2))}, {sin(x_(2)), cos(x_(2))}};
         target_planned_r = R * target_planned;
         double norm = std::sqrt(std::pow(target_planned_r(0) - x_(0), 2) + std::pow(target_planned_r(1) - x_(1), 2));
         if (norm < 10) fsm_ = 3;    // go vers la zone
         else target_planned = target_;
     }
 
-    if (fsm_ == 2) {
-        float eps_x = coef_x * 1.5; // marge
-        float eps_y = coef_y * 1.5;
-        float dist = eps_x;
+    else if (fsm_ == 2) {
+        double eps_x = coef_x * 1.5; // marge
+        double eps_y = coef_y * 1.5;
+        double dist = eps_x;
         Matrix<double, 2, 1> p; // point de la trajectoire
         if (1280 - target_(0) < eps_x || target_(0) < eps_x) {
             // mur du bas ou du haut
@@ -159,18 +161,35 @@ void PilotageNode::planning() {
             // mur de gauche ou de droite
             p << target_(0), target_(1) + dist;
         }
-        Matrix<double, 2, 1> p_r;
-        Matrix<double, 2, 2> R{{cos(x_(2)), -sin(x_(2))}, {sin(x_(2)), cos(x_(2))}};
-        p_r = R * p;
 
+        Matrix<double, 2, 1> p_r;
+        p_r = R * p;
         // vérifier qu'on est proche du point intermédiaire
-        double norm = std::sqrt(std::pow(p_r(0) - x_(0), 2) + std::pow(p_r(1) - x_(1), 2));
-        if (norm > 10) {
-            target_planned = p;
-        }
+        norm = std::sqrt(std::pow(p_r(0) - x_(0), 2) + std::pow(p_r(1) - x_(1), 2));
+        if (norm > 10) target_planned = p;
         else fsm_ = 1;  // on va vers la balle
     }
 
+    if (fsm_ == 3) {
+        // pour l'instant on reste du coté des points C et B
+        // on veut rejoindre le point entre C et B
+        // on vérifie si on est au dessus de la porte
+        if (x_(1) > zone_C[1]) {
+            // on va vers au-dessus
+            target_planned = {x_(0), zone_B[1] - 30};
+        }
+        else if (x_(0) > zone_B[0]) {
+            // on va vers la gauche
+            target_planned = {zone_C[0] - 30, x_(1)};
+        }
+        else {
+            // on va entre les portes
+            target_planned = {zone_B[0] - zone_C[0], zone_B[1] - zone_C[1]};
+            target_planned_r = R * target_planned;
+            double norm = std::sqrt(std::pow(target_planned_r(0) - x_(0), 2) + std::pow(target_planned_r(1) - x_(1), 2));
+            if (norm < 10) fsm_ = 0;
+        }
+    }
 }
 
 /****************************************
