@@ -56,9 +56,13 @@
       </material>
     </visual>
     <collision>
+      <origin xyz="0.0 0.0 -0.15" rpy="${pi/2} 0.0  0.0"/>
       <geometry>
-        <box size="${base_length} ${base_width} ${base_height}"/>
+        <mesh filename="file://$(find benoit_pairob)/src/description/meshes/Chassis.obj"/>
       </geometry>
+      <!-- <geometry>
+        <box size="${base_length} ${base_width} ${base_height}"/>
+      </geometry> -->
     </collision>
 
     <xacro:box_inertia m="10" w="${base_width}" d="${base_length}" h="${base_height}"/>
