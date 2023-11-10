@@ -66,19 +66,19 @@ def generate_launch_description():
     )
 
     return launch.LaunchDescription([
-        #spawn_entity,
-        #joint_state_publisher_node,
+        spawn_entity,
+        joint_state_publisher_node,
 
-        #tennis_court_launch,
+        tennis_court_launch,
         launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
                                             description='Absolute path to robot urdf file'),
         robot_state_publisher_node,
         launch.actions.DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
                                             description='Absolute path to rviz config file'),
-        #nodeDetectBall,
-        #nodeDetectRobot,
-        #nodeChooseClosest,
-        rviz_node,
-        #joycon_node,
-        #nodePilotage
+        nodeDetectBall,
+        nodeDetectRobot,
+        nodeChooseClosest,
+        #rviz_node,
+        joycon_node,
+        nodePilotage
     ])

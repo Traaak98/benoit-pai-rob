@@ -46,7 +46,7 @@
     <visual>
       <origin xyz="0.0 0.0 -0.15" rpy="${pi/2} 0.0  0.0"/>
       <geometry>
-        <mesh filename="file://$(find benoit_pairob)/src/description/meshes/ChassisVrai.obj"/>
+        <mesh filename="file://$(find benoit_pairob)/src/description/meshes/Chassis.obj"/>
       </geometry>
       <!-- <geometry>
       <box size="${base_length} ${base_width} ${base_height}"/>
@@ -58,7 +58,7 @@
     <collision>
       <origin xyz="0.0 0.0 -0.15" rpy="${pi/2} 0.0  0.0"/>
       <geometry>
-        <mesh filename="file://$(find benoit_pairob)/src/description/meshes/ChassisVrai.obj"/>
+        <mesh filename="file://$(find benoit_pairob)/src/description/meshes/Chassis.obj"/>
       </geometry>
       <!-- <geometry>
         <box size="${base_length} ${base_width} ${base_height}"/>
