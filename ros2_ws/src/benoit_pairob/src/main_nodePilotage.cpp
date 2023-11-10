@@ -82,23 +82,39 @@ void PilotageNode::timer_callback(){
 }
 
 void PilotageNode::control() {
-    // calcul de l'erreur
-    RCLCPP_INFO(this->get_logger(), "x = %f, y = %f, theta = %f", x_(0), x_(1), x_(2));
-    RCLCPP_INFO(this->get_logger(), "target_x = %f, target_y = %f", target_(0), target_(1));
-
     double e = atan2(target_(1)-x_(1), target_(0)-x_(0))-x_(2);
 
     // RCLCPP_INFO(this->get_logger(), "x = %f, y = %f, theta = %f", x_(0), x_(1), x_(2));
     // RCLCPP_INFO(this->get_logger(), "target_x = %f, target_y = %f", target_(0), target_(1));
     // RCLCPP_INFO(this->get_logger(), "e = %f", e);
-
+    
     e = 2*atan(tan(e/2));
     RCLCPP_INFO(this->get_logger(), "e = %f", e);
+
+    if (e > M_PI/4)
+    {
+        u1_ = M_PI/5;
+    } else if (e < -M_PI/4)
+    {
+        u1_ = -M_PI/5;
+    } else {
+        u1_ = k*e;
+    }
+    if (e<=0.05 && e>=-0.05)
+    {
+        u1_ = 0;
+        u2_ = 1;
+    } else {
+        u2_ = 0;
+    }
+
+}
+
+void PilotageNode::planning() {
 
     // check position balle
     bool ball_presence = target_(0) != 0 || target_(1) != 0;
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "bool : %d", ball_presence);
-
     if (target_(0) > img_w/2 && x_(0) < img_w/2)  {
         // CHANGER DE COTE --> regarder en haut ou en bas puis passage
         ball_presence = false;
@@ -109,55 +125,52 @@ void PilotageNode::control() {
     }
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "ball presence : %d", ball_presence);
 
-    if ((target_(0) > zone_E[0] && target_(0) < filet_1[0] - 1.5*coef_x && target_(1) < zone_F[1] && target_(1) > zone_D[1])
-        || (target_(0) > filet_1[0] + 1.5*coef_x && target_(0) < zone_A[0] && target_(1) < zone_F[1] && target_(1) > zone_D[1]))
-    { fsm_ = 1; }
-    else fsm_ = 2;
-
-    if (ball_presence && fsm_ == 1) {
-        // DANS LE CARRE FAIRE SUIVI DE CAP SIMPLE
-        e = 2*atan(tan(e/2));
-        if (e > M_PI/4)
-        {
-            u1_ = M_PI/5;
-        } else if (e < -M_PI/4)
-        {
-            u1_ = -M_PI/5;
-        } else {
-            u1_ = k*e;
+    bool condition_mur = (target_(0) > zone_E[0] && target_(0) < filet_1[0] - 1.5*coef_x && target_(1) < zone_F[1] && target_(1) > zone_D[1])
+                         || (target_(0) > filet_1[0] + 1.5*coef_x && target_(0) < zone_A[0] && target_(1) < zone_F[1] && target_(1) > zone_D[1]);
+    if (fsm_ == 0 && ball_presence) {
+        if (condition_mur) { // près du mur : passage par un point intermédiaire
+            fsm_ = 2;
+        }
+        else { // au centre : on va vers la balle
+            fsm_ = 1;
+            target_planned = target_;
         }
     }
-    if (e<=0.05 && e>=-0.05)
-    {
-        u1_ = 0;
-        u2_ = 1;
-    } else {
-        u2_ = 0;
+
+    if (fsm_ == 1) {
+        Matrix<double, 2, 1> target_planned_r;
+        Matrix<double, 2, 2> R{{cos(x_(2)), -sin(x_(2))}, {sin(x_(2)), cos(x_(2))}};
+        target_planned_r = R * target_planned;
+        double norm = std::sqrt(std::pow(target_planned_r(0) - x_(0), 2) + std::pow(target_planned_r(1) - x_(1), 2));
+        if (norm < 10) fsm_ = 3;    // go vers la zone
+        else target_planned = target_;
     }
 
-    if (ball_presence && fsm_ == 2 && false) { // FAIRE FONCTION CLARA :  sur les bords :  approche - virage - avance
-        // distinction de cas : mur vertical ou horizontal
+    if (fsm_ == 2) {
         float eps_x = coef_x * 1.5; // marge
         float eps_y = coef_y * 1.5;
         float dist = eps_x;
-        float p_x, p_y; // point de la trajectoire
-
+        Matrix<double, 2, 1> p; // point de la trajectoire
         if (1280 - target_(0) < eps_x || target_(0) < eps_x) {
             // mur du bas ou du haut
-            p_x = target_(0) + dist;
-            p_y = target_(1);
+            p << target_(0) + dist, target_(1);
         }
         else if (720 - target_(1) < eps_y || target_(1) < eps_y) {
             // mur de gauche ou de droite
-            p_x = target_(0);
-            p_y = target_(1) + dist;
+            p << target_(0), target_(1) + dist;
         }
+        Matrix<double, 2, 1> p_r;
+        Matrix<double, 2, 2> R{{cos(x_(2)), -sin(x_(2))}, {sin(x_(2)), cos(x_(2))}};
+        p_r = R * p;
 
-        u1_ = std::atan2(p_y - x_(1), p_x - x_(0));
-        bool condition = std::sqrt(std::pow(p_x - x_(0), 2) + std::pow(p_y - x_(1), 2)) < 0.2 * coef_x;
-        // suivre cap jusqu-à ce que condition soit fausse puis suivre cap vers balle
-
+        // vérifier qu'on est proche du point intermédiaire
+        double norm = std::sqrt(std::pow(p_r(0) - x_(0), 2) + std::pow(p_r(1) - x_(1), 2));
+        if (norm > 10) {
+            target_planned = p;
+        }
+        else fsm_ = 1;  // on va vers la balle
     }
+
 }
 
 /****************************************
