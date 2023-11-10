@@ -35,7 +35,7 @@ def generate_launch_description():
     spawn_entity = launch_ros.actions.Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-entity', 'benoit_pairob', '-topic', 'robot_description', '-x', '3', '-y', '-3', '-z', '1'],
+        arguments=['-entity', 'benoit_pairob', '-topic', 'robot_description', '-x', '6', '-y', '-3', '-z', '1'],
         output='screen'
     )
     joycon_node = launch_ros.actions.Node(
