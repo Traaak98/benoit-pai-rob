@@ -35,14 +35,14 @@ void PilotageNode::set_theta(sensor_msgs::msg::Imu pose) {
 }
 
 void PilotageNode::set_x(geometry_msgs::msg::PoseStamped pose) {
-    double x = pose.pose.position.x;
-    double y = pose.pose.position.y;
+    double x = -pose.pose.position.y;
+    double y = -pose.pose.position.x;
     x_ << x, y, x_(2);
 }
 
 void PilotageNode::set_target(geometry_msgs::msg::PoseStamped pose) {
-    double x = pose.pose.position.x;
-    double y = pose.pose.position.y;
+    double x = -pose.pose.position.y;
+    double y = -pose.pose.position.x;
     target_ << x, y;
 }
 
@@ -82,9 +82,12 @@ void PilotageNode::timer_callback(){
 }
 
 void PilotageNode::control() {
-    RCLCPP_INFO(this->get_logger(), "x = %f, y = %f, theta = %f", x_(0), x_(1), x_(2));
-    RCLCPP_INFO(this->get_logger(), "target_x = %f, target_y = %f", target_(0), target_(1));
     double e = atan2(target_(1)-x_(1), target_(0)-x_(0))-x_(2);
+
+    // RCLCPP_INFO(this->get_logger(), "x = %f, y = %f, theta = %f", x_(0), x_(1), x_(2));
+    // RCLCPP_INFO(this->get_logger(), "target_x = %f, target_y = %f", target_(0), target_(1));
+    // RCLCPP_INFO(this->get_logger(), "e = %f", e);
+
     e = 2*atan(tan(e/2));
 
     if (e > M_PI/4)
@@ -105,7 +108,7 @@ void PilotageNode::control() {
         u2_ = 0;
     }
 
-    RCLCPP_INFO(this->get_logger(), "e = %f", e);
+    
 }
 
 
