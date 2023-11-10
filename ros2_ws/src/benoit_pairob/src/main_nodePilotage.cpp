@@ -168,7 +168,7 @@ void PilotageNode::planning() {
         //target_planned_r = R * target_planned;
         //RCLCPP_INFO(this->get_logger(), "target_planned_r = %f, %f", target_planned_r(0), target_planned_r(1));
         norm = std::sqrt(std::pow(target_planned(0) - x_(0), 2) + std::pow(target_planned(1) - x_(1), 2));
-        if (norm < 18) fsm_ = 3;    // go vers la zone
+        if (norm < 15) fsm_ = 3;    // go vers la zone
         else target_planned = target_;
     }
 
