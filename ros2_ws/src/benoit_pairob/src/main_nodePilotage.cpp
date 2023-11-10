@@ -24,12 +24,14 @@ void PilotageNode::init_parameters() {
     u1_ = 0;
     u2_ = 0;
     norm = 150;
+    norm2 = 150;
     teleop = false;
     button_pressed = false;
     v_ = 2.;
     fsm_ = 0;
     avance_ = false;
     ball_same_side_ = false;
+    change_side_ = false;
 }
 
 void PilotageNode::set_theta(sensor_msgs::msg::Imu pose) {
@@ -139,50 +141,88 @@ void PilotageNode::ball_on_the_same_side() {
 }
 
 void PilotageNode::change_side() {
-    if (not(ball_same_side_) && x_(0) < img_w/2)  {
+    if (x_(0) < -img_w/2)  {
         // CHANGER DE COTE --> regarder en haut ou en bas puis passage
         
-        if (target_(1) > img_h/2) {
+        if (x_(1) < -img_h/2) {
             // regarder en bas
             // on regarde si on est déjà proche du filet
             norm = std::sqrt(std::pow(filet_1_left[0] - x_(0), 2) + std::pow(filet_1_left[1] - x_(1), 2));
+            norm2 = std::sqrt(std::pow(filet_1_right[0] - x_(0), 2) + std::pow(filet_1_right[1] - x_(1), 2));
 
-            if (norm > 10) target_planned << filet_1_left[0], filet_1_left[1]; // si on est loin du filet on va vers le filet
-            else target_planned << filet_1_right[0], filet_1_right[1]; // sinon on le dépasse
+            if (norm > 10 && not(change_side_)) {
+                target_planned << filet_1_left[0], filet_1_left[1]; // si on est loin du filet on va vers le filet
+            }
+            else if (norm2 > 10) {
+                target_planned << filet_1_right[0], filet_1_right[1]; // sinon on le dépasse
+                change_side_ = true;
+            }
+            else {
+                fsm_ = 0;
+                change_side_ = false;
+            }
         }
         else {
             // regarder en haut
             // on regarde si on est déjà proche du filet
-            norm = std::sqrt(std::pow(filet_2_left[0] - x_(0), 2) + std::pow(filet_2_left[1] - x_(1), 2));
+            norm = std::sqrt(std::pow(filet_2_left[1] - x_(0), 2) + std::pow(filet_2_left[1] - x_(1), 2));
+            norm2 = std::sqrt(std::pow(filet_2_right[1] - x_(0), 2) + std::pow(filet_2_right[1] - x_(1), 2));
 
-            if (norm > 10) target_planned << filet_2_left[0], filet_2_left[1];
-            else target_planned << filet_2_right[0], filet_2_right[1];
+            if (norm > 10 && not(change_side_)) {
+                target_planned << filet_2_left[0], filet_2_left[1];
+            }
+            else if (norm2 > 10) {
+                target_planned << filet_2_right[0], filet_2_right[1];
+                change_side_ = true;
+            }
+            else {
+                fsm_ = 0;
+                change_side_ = false;
+            }
         }
     }
-    else if (not(ball_same_side_) && x_(0) > img_w/2) {
+    else if (x_(0) > -img_w/2) {
         // CHANGER DE COTE --> regarder en haut ou en bas
-        if (target_(1) > img_h/2) {
+        if (x_(1) < -img_h/2) {
             // regarder en bas
             // on regarde si on est déjà proche du filet
             norm = std::sqrt(std::pow(filet_1_right[0] - x_(0), 2) + std::pow(filet_1_right[1] - x_(1), 2));
-            if (norm > 10) target_planned << filet_1_right[0], filet_1_right[1];
-            else target_planned << filet_1_left[0], filet_1_left[1];
+            norm2 = std::sqrt(std::pow(filet_1_left[0] - x_(0), 2) + std::pow(filet_1_left[1] - x_(1), 2));
+
+            if (norm > 10 && not(change_side_)) {
+                target_planned << filet_1_right[0], filet_1_right[1];
+            }
+            else if (norm2 > 10) {
+                target_planned << filet_1_left[0], filet_1_left[1];
+                change_side_ = true;
+            }
+            else {
+                fsm_ = 0;
+                change_side_ = false;
+            }
         }
         else {
             // regarder en haut
             // on regarde si on est déjà proche du filet
             norm = std::sqrt(std::pow(filet_2_right[0] - x_(0), 2) + std::pow(filet_2_right[1] - x_(1), 2));
-            if (norm > 10) target_planned << filet_2_right[0], filet_2_right[1]; // si on est loin du filet on va vers le filet
-            else target_planed << filet_2_left[0], filet_2_left[1]; // sinon on le dépasse
-            
+            norm2 = std::sqrt(std::pow(filet_2_left[0] - x_(0), 2) + std::pow(filet_2_left[1] - x_(1), 2));
+
+            if (norm > 10 && not(change_side_)) {
+                target_planned << filet_2_right[0], filet_2_right[1]; // si on est loin du filet on va vers le filet
+            }
+            else if (norm2 > 10) {
+                target_planned << filet_2_left[0], filet_2_left[1]; // sinon on le dépasse
+                change_side_ = true;
+            }
+            else {
+                fsm_ = 0;
+                change_side_ = false;
+            }
         }
     }
 }
 
 void PilotageNode::planning() {
-
-    // check position balle
-    bool ball_presence = target_(0) != 0 || target_(1) != 0;
 
     Matrix<double, 2, 1> target_planned_r;
     Matrix<double, 2, 2> R{{cos(x_(2)), -sin(x_(2))}, {sin(x_(2)), cos(x_(2))}};
@@ -199,12 +239,12 @@ void PilotageNode::planning() {
             target_planned = target_;
         }
     }
-    else if (!ball_same_side_ && fsm_ != 3) {    // todo probleme
-        avance_ = false;
-        fsm_ = 0;
+    else if (!ball_same_side_ && fsm_ != 3) {
+        avance_ = true;
+        fsm_ = 4;
     }
 
-    else if (fsm_ == 1) {
+    else if (ball_same_side_ && fsm_ == 1) {
         //target_planned_r = R * target_planned;
         //RCLCPP_INFO(this->get_logger(), "target_planned_r = %f, %f", target_planned_r(0), target_planned_r(1));
         norm = std::sqrt(std::pow(target_planned(0) - x_(0), 2) + std::pow(target_planned(1) - x_(1), 2));
@@ -212,7 +252,7 @@ void PilotageNode::planning() {
         else target_planned = target_;
     }
 
-    else if (fsm_ == 2) {
+    else if (ball_same_side_ && fsm_ == 2) {
         double eps_x = coef_x * 1.5; // marge
         double eps_y = coef_y * 1.5;
         double dist = eps_x;
@@ -235,27 +275,45 @@ void PilotageNode::planning() {
         }
     }
 
-    if (fsm_ == 3) {
+    else if (fsm_ == 3) {
         // pour l'instant on reste du coté des points C et B
         // on veut rejoindre le point entre C et B
         // on vérifie si on est au dessus de la porte
-        if (-x_(0) > zone_C[1]) {
-            // on va vers au-dessus
-            //target_planned = {x_(0), -zone_B[0] + 30};
-            target_planned = {x_(0), -zone_B[0] + 30};
+        if (x_(0) > -img_w/2)  {
+            if (x_(0) > -zone_F[1]) {
+                target_planned = {x_(0), -zone_E[0] - 15};
+            }
+            else if (x_(1) > -zone_E[0]) {
+                target_planned = {-zone_F[1] + 15, x_(1)};
+            }
+            else {
+                target_planned = {-zone_E[1] + (-zone_F[1] + zone_E[1])/2, -zone_E[0] + (-zone_F[0] + zone_E[0])/2};
+                norm = std::sqrt(std::pow(target_planned(0) - x_(0), 2) + std::pow(target_planned(1) - x_(1), 2));
+                if (norm < 10) fsm_ = 0; 
+            }
+        } else {
+            if (x_(0) < -zone_C[1]) {
+                // on va vers au-dessus
+                //target_planned = {x_(0), -zone_B[0] + 30};
+                target_planned = {x_(0), -zone_B[0] + 15};
+            }
+            else if (x_(1) < -zone_B[0]) {
+                // on va vers la gauche
+                //target_planned = {-zone_C[1] + 30, x_(1)};
+                target_planned = {-zone_C[1] - 15, x_(1)};
+            }
+            else {
+                // on va entre les portes
+                //target_planned = {-zone_B[1] + zone_C[1], -zone_B[0] + zone_C[0]};
+                target_planned = {-zone_C[1] + (-zone_B[1] + zone_C[1])/2, -zone_C[0] + (-zone_B[0] + zone_C[0])/2};
+                norm = std::sqrt(std::pow(target_planned(0) - x_(0), 2) + std::pow(target_planned(1) - x_(1), 2));
+                if (norm < 10) fsm_ = 0;
+            }
         }
-        else if (-x_(1) > zone_B[0]) {
-            // on va vers la gauche
-            //target_planned = {-zone_C[1] + 30, x_(1)};
-            target_planned = {-zone_C[1] + 30, x_(1)};
-        }
-        else {
-            // on va entre les portes
-            //target_planned = {-zone_B[1] + zone_C[1], -zone_B[0] + zone_C[0]};
-            target_planned = {-zone_C[1] + (-zone_B[1] + zone_C[1])/2, -zone_C[0] + (-zone_B[0] + zone_C[0])/2};
-            norm = std::sqrt(std::pow(target_planned(0) - x_(0), 2) + std::pow(target_planned(1) - x_(1), 2));
-            if (norm < 10) fsm_ = 0;
-        }
+    }
+
+    else if (fsm_ == 4) {
+        change_side();
     }
     // RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "fsm : %d ; norm : %f", fsm_, norm);
 }

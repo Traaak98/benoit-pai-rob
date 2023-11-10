@@ -28,6 +28,7 @@ class PilotageNode : public rclcpp::Node {
         void set_target_teleop(sensor_msgs::msg::Joy joy);
         void control();
         void planning();
+        void change_side();
         void ball_on_the_same_side();
 
     private:
@@ -41,6 +42,7 @@ class PilotageNode : public rclcpp::Node {
         double u1_;
         double u2_;
         double norm;
+        double norm2;
         double v_;  // vitesse d'avance
         bool ball_same_side_;
 
@@ -57,6 +59,7 @@ class PilotageNode : public rclcpp::Node {
         // index de la FSM
         int fsm_;
         bool avance_;
+        bool change_side_;
 
         // coordonnées du terrain et autres constantes
         double img_w = 1280;
@@ -72,8 +75,8 @@ class PilotageNode : public rclcpp::Node {
         double zone_D[2] = {1.5*coef_x, img_h - 1.5*coef_y};
         double zone_E[2] = {1.5*coef_x, 3*coef_y};
         double zone_F[2] = {3*coef_x, 1.5*coef_y};
-        double filet_1_left[2] = {filet_1[0] - 0.5*coef_x, filet_1[1] - 0.5*coef_y};
-        double filet_1_right[2] = {filet_1[0] + 0.5*coef_x, filet_1[1] - 0.5*coef_y};
-        double filet_2_left[2] = {filet_2[0] - 0.5*coef_x, filet_2[1] + 0.5*coef_y};
-        double filet_2_right[2] = {filet_2[0] + 0.5*coef_x, filet_2[1] + 0.5*coef_y};
+        double filet_1_left[2] = {-filet_1[1] + 0.5*coef_y, -filet_1[0] + 3*coef_x};
+        double filet_1_right[2] = {-filet_1[1] + 0.5*coef_y, -filet_1[0] - 3*coef_x};
+        double filet_2_left[2] = {-filet_2[1] - 0.5*coef_y, -filet_2[0] + 3*coef_x};
+        double filet_2_right[2] = {-filet_2[1] - 0.5*coef_y, -filet_2[0] - 3*coef_x};
 };
