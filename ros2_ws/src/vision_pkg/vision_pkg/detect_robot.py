@@ -18,26 +18,27 @@ class DetectRobot(Node):
         self.image_publisher = self.create_publisher(Image, '/image_detection_robot', 10)
         self.XY_publisher = self.create_publisher(PoseStamped, '/xy_robot',10)
 
-
+    # on détecte le robot
     def detect_rose(self,imgBGR):
-
+        # Conversion BGR vers HSV
         imgHSV = cv2.cvtColor(imgBGR, cv2.COLOR_RGB2HSV)
-
+        # Seuils pour detection du rose
         Hmin = 120
         Hmax = 170
         Smin = 60
         Smax = 255
         Vmin = 0
         Vmax = 255
-
+        # Seuillage HSV pour detection du rose
         imgbin = cv2.inRange(imgHSV, (Hmin, Smin, Vmin), (Hmax, Smax, Vmax))
 
         return imgbin
 
 
 
-
+    # on récupère les coordonnées du robot
     def camera_callback(self, msg):
+        # on initialise le message à publier
         msgtopublish = PoseStamped()
         cv_image = self.cv_bridge.imgmsg_to_cv2(msg)
         imgbin = self.detect_rose(cv_image)
@@ -45,33 +46,43 @@ class DetectRobot(Node):
         image_msg = self.cv_bridge.cv2_to_imgmsg(imgbin)
         self.image_publisher.publish(image_msg)
 
-
+        # on récupère les contours du robot
         contours, hierarchy = cv2.findContours(imgbin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         #print("contours :" + str(contours))
-        if len(contours) > 0:
+
+        # on dessine les contours du robot
+
+        if len(contours) > 0: # si on détecte un contour
+            # on parcourt la liste des contours
             for contour in contours:
                 cv2.drawContours(imgbin, [contour], -1, (0,255,0), 5)
 
                 M = cv2.moments(contour)
                 #print("moment : " + str(M["m00"]))
+
+                # on calcule les coordonnées du barycentre
                 if M["m00"] != 0:
                     cx = float(M["m10"] / M["m00"])
                     cy = float(M["m01"] / M["m00"])
                     msgtopublish.pose.position.x = cx
                     msgtopublish.pose.position.y = cy
                     self.XY_publisher.publish(msgtopublish)
+                # si le moment est trop faible, on affiche un message
                 else:
                     print("Le moment est trop faible")
+        # si on ne détecte pas de contour, on affiche un message
         else:
             print("je ne detecte pas de contour")
         print("--- Robot ---")
         print("Lx :" + str(cx))
         print("Ly :" + str(cy))
 
-
+    # on détecte le robot avec la caméra de visualisation
     def camera_callback_visu(self, msg):
+
         cv_image = self.cv_bridge.imgmsg_to_cv2(msg)
         imgbin = self.detect_rose(cv_image)
+        # on récupère les contours du robot
         contours, hierarchy = cv2.findContours(imgbin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
         img_contours = cv_image.copy()
@@ -80,10 +91,13 @@ class DetectRobot(Node):
 
         cv2.drawContours(img_contours, contours, -1, color, thickness)
         print("contour : "+ str(contours[0]))
+        # recherche du plus grand contour
         best_contour = contours[0]
         max_area = cv2.contourArea(best_contour)
+        # on parcourt la liste des contours pour trouver le plus grand
         for contour in contours:
             area = cv2.contourArea(contour)
+
             if area > max_area:
                 best_contour = contour
                 max_area = area
