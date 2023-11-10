@@ -48,9 +48,6 @@
       <geometry>
         <mesh filename="file://$(find benoit_pairob)/src/description/meshes/ChassisVrai.obj"/>
       </geometry>
-      <!-- <geometry>
-      <box size="${base_length} ${base_width} ${base_height}"/>
-      </geometry> -->
       <material name="Pink">
       	<color rgba="0.88 0.24 0.58 1.0"/>
       </material>
@@ -60,9 +57,6 @@
       <geometry>
         <mesh filename="file://$(find benoit_pairob)/src/description/meshes/ChassisVrai.obj"/>
       </geometry>
-      <!-- <geometry>
-        <box size="${base_length} ${base_width} ${base_height}"/>
-      </geometry> -->
     </collision>
 
     <xacro:box_inertia m="10" w="${base_width}" d="${base_length}" h="${base_height}"/>
@@ -71,6 +65,8 @@
   <gazebo reference="base_link">
     <material>Gazebo/PurpleGlow
     </material>
+    <mu1 value="10"/>
+    <mu2 value="10"/>
   </gazebo>
 
   <!-- Robot Footprint -->
@@ -81,85 +77,6 @@
     <child link="base_footprint"/>
     <origin xyz="0.0 0.0 ${-(wheel_radius+wheel_zoff)}" rpy="0 0 0"/>
   </joint>
-
-  <!-- Front -->
-  <!-- <link name="front_link">
-    <visual>
-      <geometry>
-        <box size="0.02 ${base_width} ${front_height}"/>
-      </geometry>
-      <material name="Pink">
-        <color rgba="0.88 0.24 0.58 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <geometry>
-        <box size="0.02 ${base_width} ${front_height}"/>
-      </geometry>
-    </collision>
-
-    <xacro:box_inertia m="1" w="${base_width}" d="0.02" h="${front_height}"/>
-  </link>
-
-  <joint name="front_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="front_link"/>
-    <origin xyz="${base_length/2} 0.0 ${-(base_height/2)}" rpy="0 0 0"/>
-  </joint> -->
-
-  <!-- Front Left -->
-  <!-- <link name="front_left_link">
-    <visual>
-      <origin xyz="0 ${front_side_length/2} 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.02 ${front_side_length} ${front_height}"/>
-      </geometry>
-      <material name="Pink">
-        <color rgba="0.88 0.24 0.58 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 ${front_side_length/2} 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.02 ${front_side_length} ${front_height}"/>
-      </geometry>
-    </collision>
-
-    <xacro:box_inertia m="1" w="${front_side_length}" d="0.02" h="${front_height}"/>
-  </link>
-
-  <joint name="front_left_joint" type="fixed">
-    <parent link="front_link"/>
-    <child link="front_left_link"/>
-    <origin xyz="0 ${base_width/2} 0" rpy="0 0 ${-pi/4}"/>
-  </joint> -->
-
-  <!-- Front Right -->
-  <!-- <link name="front_right_link">
-    <visual>
-      <origin xyz="0 ${-front_side_length/2} 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.02 ${front_side_length} ${front_height}"/>
-      </geometry>
-      <material name="Pink">
-        <color rgba="0.88 0.24 0.58 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 ${-front_side_length/2} 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.02 ${front_side_length} ${front_height}"/>
-      </geometry>
-    </collision>
-
-    <xacro:box_inertia m="1" w="${front_side_length}" d="0.02" h="${front_height}"/>
-  </link>
-
-  <joint name="front_right_joint" type="fixed">
-    <parent link="front_link"/>
-    <child link="front_right_link"/>
-    <origin xyz="0 ${-base_width/2} 0" rpy="0 0 ${pi/4}"/>
-  </joint> -->
 
   <!-- Wheels -->
   <xacro:macro name="wheel" params="prefix x_reflect y_reflect">
@@ -262,12 +179,14 @@
   <!-- IMU -->
   <link name="imu_link">
     <visual>
+      <origin xyz="-0.1 0.0 0" rpy="0 0 0"/>
       <geometry>
         <box size="0.1 0.1 0.1"/>
       </geometry>
     </visual>
   
     <collision>
+      <origin xyz="-0.1 0.0 0" rpy="0 0 0"/>
       <geometry>
         <box size="0.1 0.1 0.1"/>
       </geometry>
