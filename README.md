@@ -29,10 +29,16 @@ Se placer dans le git :
 cd prod-public-key
 ```
 
+Déplacer la clé :
+
+```bash
+sudo cp preprod-public.gpg.key /usr/share/keyrings/
+```
+
 Lancer la commande suivante :
 
 ```bash
-echo "deb [arch=$(dpkg --print-architecture) signed-by=$(pwd)/preprod-public.gpg.key] http://172.19.48.50:8081/repository/supernana_preprod jammy main" | sudo tee /etc/apt/sources.list.d/benoit.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/preprod-public.gpg.key] http://172.19.48.50:8081/repository/supernana_preprod jammy main" | sudo tee /etc/apt/sources.list.d/benoit.list > /dev/null
 ```
 
 ### Tester la connexion au serveur
@@ -41,7 +47,7 @@ Vérifier si on peut télécharger le package :
 
 ```bash
 sudo apt update 
-sudo apt install ros-humble-benoit-pairob
+sudo apt install ros-humble-benoit-pairob ros-humble-vision-pkg ros-humble-custom-msg -y
 ```
 
 Vous pouvez ensuite passer à la partie suivante pour tester si l'application fonctionne.
